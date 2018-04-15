@@ -5,13 +5,23 @@ import java.util.ArrayList;
 public class OntoClass {
 	private String Titulo;
 	private String Tipo;
-	private ArrayList<String> ListAutores;
+	private ArrayList<OntoParceiro> ListAutores;
+	private int ano;
 
-	public OntoClass(String titulo, String tipo, ArrayList<String> listAutores) {
+	public OntoClass(String titulo, String tipo, ArrayList<OntoParceiro> listAutores) {
 		super();
 		this.Titulo = titulo.replaceAll(" ", "_");
 		this.Tipo = tipo;
 		this.ListAutores = listAutores;
+
+	}
+
+	public OntoClass(String titulo, String tipo, int ano) {
+		super();
+		this.Titulo = titulo.replaceAll(" ", "_");
+		this.Tipo = tipo;
+		this.ListAutores = new ArrayList<>();
+		this.ano = ano;
 	}
 
 	public String getTitulo() {
@@ -22,16 +32,12 @@ public class OntoClass {
 		this.Titulo = titulo.replaceAll(" ", "_");
 	}
 
-	public void ifem() {
-		this.ListAutores.forEach(u -> u.replaceAll(" ", "_"));
-	}
 
-	public ArrayList<String> getListAutores() {
-		ifem();
+	public ArrayList<OntoParceiro> getListAutores() {
 		return this.ListAutores;
 	}
 
-	public void setListAutores(ArrayList<String> listAutores) {
+	public void setListAutores(ArrayList<OntoParceiro> listAutores) {
 		this.ListAutores = listAutores;
 	}
 
@@ -45,8 +51,16 @@ public class OntoClass {
 
 	@Override
 	public String toString() {
-		return "\n OntoClass [Titulo=" + this.Titulo + ", Tipo=" + this.Tipo + "\n, ListAutores="
+		return "\n OntoClass [Titulo=" + this.Titulo + ", Ano=" + this.ano + ", Tipo=" + this.Tipo + "\n, ListAutores="
 				+ this.ListAutores.toString() + "]";
+	}
+
+	public int getAno() {
+		return this.ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 
 }

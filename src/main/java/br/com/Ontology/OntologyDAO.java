@@ -60,10 +60,12 @@ public class OntologyDAO {
 	public void preencherOnto(OntoPessoa pessoa) throws OWLOntologyStorageException, FileNotFoundException {
 		String nome = pessoa.getIdLattes();
 
+		// Add dados gerais
 		addIndividual(nome, "Pessoa");
 		addAtribNoIndivido(nome, pessoa.getIdLattes(), "IdLattes");
 		addAtribNoIndivido(nome, pessoa.getNomeCompleto(), "NomeCompleto");
 		addAtribNoIndivido(nome, pessoa.getData(), "DataAtualizacao");
+		// Add dados de projetos de pesquisa
 		pessoa.getListOntoProjetoPesquisa().forEach(u -> {
 			addIndividual(u.getTitulo(), u.getTipo());
 			addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "Titulo");
@@ -74,12 +76,14 @@ public class OntologyDAO {
 			});
 
 		});
-		pessoa.getListOntoEvento().forEach(u -> {
-			addIndividual(u.getTitulo(), u.getTipo());
-			addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "Titulo");
-			addRelacaoInd(nome, u.getTitulo(), "Participou");
-
-		});
+		// Add dados de eventos
+		// pessoa.getListOntoEvento().forEach(u -> {
+		// addIndividual(u.getTitulo(), u.getTipo());
+		// addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "Titulo");
+		// addRelacaoInd(nome, u.getTitulo(), "Participou");
+		//
+		// });
+		// Add dados de formacao
 		pessoa.getListOntoFormacao().forEach(u -> {
 			addIndividual(u.getTitulo(), u.getTipo());
 			addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "TituloTrabalhoFinal");

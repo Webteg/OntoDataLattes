@@ -31,26 +31,23 @@ public class PreencherOntologia {
 	}
 
 	private void inserirDadosGerais()
- throws XPathExpressionException, OWLOntologyStorageException,
- FileNotFoundException {
- SearchXMLDadosGerais searchXML = new SearchXMLDadosGerais(this.xmlfile);
- OntoPessoa pessoa = new OntoPessoa(searchXML.NomeCompleto().replaceAll(" ",
- "_"),
- searchXML.IDLattes(), searchXML.UltimaAtualizacao());
- PreencherXMLtoOnto preencherXMLtoOnto = new PreencherXMLtoOnto(this.xmlfile);
- preencherXMLtoOnto.buscarXML(pessoa);
+			throws XPathExpressionException, OWLOntologyStorageException, FileNotFoundException {
+		SearchXMLDadosGerais searchXML = new SearchXMLDadosGerais(this.xmlfile);
+		OntoPessoa pessoa = new OntoPessoa(searchXML.NomeCompleto().replaceAll(" ", "_"), searchXML.IDLattes(),
+				searchXML.UltimaAtualizacao());
+		PreencherXMLtoOnto preencherXMLtoOnto = new PreencherXMLtoOnto(this.xmlfile);
+		preencherXMLtoOnto.buscarXML(pessoa);
 		System.out.println(pessoa.toString());
- this.ontologyDAO.preencherOnto(pessoa);
+		this.ontologyDAO.preencherOnto(pessoa);
 
-
-		this.ontologyDAO.addIndividual("WWW", "Pessoa");
-		this.ontologyDAO.addAtribNoIndivido(this.NomeCurriculo,
- searchXML.IDLattes(),
-  "IdLattes");
-		this.ontologyDAO.addAtribNoIndivido(this.NomeCurriculo, searchXML.NomeCompleto(), "NomeCompleto");
-		this.ontologyDAO.imprimir();
-		this.ontologyDAO.saveOntologyDAO();
- }
+		// this.ontologyDAO.addIndividual("WWW", "Pessoa");
+		// this.ontologyDAO.addAtribNoIndivido(this.NomeCurriculo, searchXML.IDLattes(),
+		// "IdLattes");
+		// this.ontologyDAO.addAtribNoIndivido(this.NomeCurriculo,
+		// searchXML.NomeCompleto(), "NomeCompleto");
+		this.imprimir();
+		// this.ontologyDAO.saveOntologyDAO();
+	}
 
 	public void imprimir() {
 		this.ontologyDAO.imprimir();

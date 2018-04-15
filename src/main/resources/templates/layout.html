@@ -15,25 +15,19 @@
 <link rel="stylesheet"
  href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
-
 <body style="background-color: #f2f2f2;">
-
- <div class="container-fluid row" style="margin-top:0px; padding-left: 0px; " >
-  <div class="col-1" style="padding-left: 0px;padding-right: 0px;">
-   <div class="position-fixed col-1" style="padding-left: 0px; padding-right: 0px;">
-    <div th:insert="header :: header"></div>
-    </div>
-    </div>
+ <div class="container-fluid row"
+  style="margin-top: 0px; padding-left: 0px;">
+  <div class="col-1" style="padding-left: 0px; padding-right: 0px;">
+   
   </div>
-  <div class="offset-1 col-11 row" style="padding-right: 0px;">
-  
-   <div layout:fragment="page_content"></div>
-  </div>
-  
  </div>
-
+ <div class=" row" style="padding-right: 0px;">
+  <div layout:fragment="page_content"></div>
+ </div>
+ 
+ 
  <!-- /.container -->
-
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
   crossorigin="anonymous"></script>
