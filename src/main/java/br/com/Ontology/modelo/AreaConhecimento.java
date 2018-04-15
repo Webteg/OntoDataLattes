@@ -13,9 +13,9 @@ public class AreaConhecimento {
 
 	public AreaConhecimento(String areaConhecimento, String subAreaConhecimento, String nomeEspecialidade) {
 		super();
-		this.areaConhecimento = areaConhecimento;
-		this.subAreaConhecimento = subAreaConhecimento;
-		this.nomeEspecialidade = nomeEspecialidade;
+		this.areaConhecimento = areaConhecimento.replaceAll(" ", "_");
+		this.subAreaConhecimento = subAreaConhecimento.replaceAll(" ", "_");
+		this.nomeEspecialidade = nomeEspecialidade.replaceAll(" ", "_");
 	}
 
 	public String getAreaConhecimento() {

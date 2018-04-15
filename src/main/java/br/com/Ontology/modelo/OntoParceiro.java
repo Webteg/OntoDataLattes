@@ -7,8 +7,8 @@ public class OntoParceiro {
 
 
 	public OntoParceiro(String nome, String citacao, String id) {
-		this.nome = nome;
-		this.citacao = citacao;
+		this.nome = nome.replaceAll(" ", "_");
+		this.citacao = citacao.replaceAll(" ", "_");
 		this.Id = id;
 	}
 

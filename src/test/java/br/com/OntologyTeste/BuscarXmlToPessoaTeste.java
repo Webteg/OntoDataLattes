@@ -12,14 +12,13 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
-import br.com.Ontology.PreencherXMLtoOnto;
+import br.com.Ontology.BuscarXmlToPessoa;
 import br.com.Ontology.modelo.AreaConhecimento;
 import br.com.Ontology.modelo.OntoClass;
 import br.com.Ontology.modelo.TrabalhoEvento;
 
-public class SearchXMLTeste {
-	private static Document xmlfile;
-	private static PreencherXMLtoOnto searchXML;
+public class BuscarXmlToPessoaTeste {
+	private static BuscarXmlToPessoa searchXML;
 
 	@Test
 	public void DadosGerais() throws Exception {
@@ -27,7 +26,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 
 		assertEquals("Fabricio Martins Mendonça", searchXML.NomeCompleto());
 		assertEquals("04/01/2018 ", searchXML.UltimaAtualizacao());
@@ -41,7 +40,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoFormacao();
 
 		assertEquals("Um_Aporte_de_Web_Mining_para_a_Web_Semântica", listprod.get(0).getTitulo());
@@ -56,7 +55,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoFormacao();
 
 		assertEquals("Aplicações_em_Engenharia_de_Software", listprod.get(1).getTitulo());
@@ -71,7 +70,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoFormacao();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -89,7 +88,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoFormacao();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -106,7 +105,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoEvento();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -121,7 +120,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoEvento();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -136,7 +135,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoEvento();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -151,7 +150,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoEvento();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -166,7 +165,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoProjetoPesquisa();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -184,7 +183,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<AreaConhecimento> listprod = searchXML.listOntoAreaAtuacao();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -199,7 +198,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoBanca();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -216,7 +215,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoBanca();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -234,7 +233,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoBanca();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -253,7 +252,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoBanca();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 
@@ -271,7 +270,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOntoBanca();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 		// System.out.println(listprod.size());
@@ -291,7 +290,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<OntoClass> listprod = searchXML.listOrganizacaoEvento();
 		// listprod.forEach(u -> System.out.println(u.toString()));
 		// System.out.println(listprod.size());
@@ -309,7 +308,7 @@ public class SearchXMLTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
-		searchXML = new PreencherXMLtoOnto(xmlfile);
+		searchXML = new BuscarXmlToPessoa(xmlfile);
 		ArrayList<TrabalhoEvento> listprod = searchXML.listOntoTrabalhoEvento();
 		listprod.forEach(u -> System.out.println(u.toString()));
 		System.out.println(listprod.size());

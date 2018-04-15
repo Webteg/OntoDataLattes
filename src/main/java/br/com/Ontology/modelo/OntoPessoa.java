@@ -17,7 +17,7 @@ public class OntoPessoa {
 
 	public OntoPessoa(String nomeCompleto, String idLattes, String data) {
 		super();
-		this.NomeCompleto = nomeCompleto;
+		this.NomeCompleto = nomeCompleto.replaceAll(" ", "_");
 		this.IdLattes = idLattes;
 		this.Data = data;
 	}
@@ -112,11 +112,11 @@ public class OntoPessoa {
 	}
 
 	public ArrayList<TrabalhoEvento> getListOntoTrabalhoEvento() {
-		return ListOntoTrabalhoEvento;
+		return this.ListOntoTrabalhoEvento;
 	}
 
 	public void setListOntoTrabalhoEvento(ArrayList<TrabalhoEvento> listOntoTrabalhoEvento) {
-		ListOntoTrabalhoEvento = listOntoTrabalhoEvento;
+		this.ListOntoTrabalhoEvento = listOntoTrabalhoEvento;
 	}
 
 

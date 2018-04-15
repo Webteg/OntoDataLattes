@@ -18,11 +18,11 @@ import br.com.Ontology.modelo.OntoParceiro;
 import br.com.Ontology.modelo.OntoPessoa;
 import br.com.Ontology.modelo.TrabalhoEvento;
 
-public class PreencherXMLtoOnto {
+public class BuscarXmlToPessoa {
 	XPath xpath;
 	public Document xmlfile;
 
-	public PreencherXMLtoOnto(Document xmlfile) {
+	public BuscarXmlToPessoa(Document xmlfile) {
 		XPathFactory xPathfactory = XPathFactory.newInstance();
 		this.xpath = xPathfactory.newXPath();
 		this.xmlfile = xmlfile;
@@ -211,10 +211,15 @@ public class PreencherXMLtoOnto {
 				String idOrientador = (IdOrientador == null) ? ""
 						: TipoNode.getAttributes().getNamedItem(IdOrientador).getTextContent();
 				ArrayList<OntoParceiro> listAutores = new ArrayList<>();
-				OntoParceiro ontoOrientador = new OntoParceiro(nomeOrientador, idOrientador);
-				listAutores.add(ontoOrientador);
-				OntoClass eve = new OntoClass(titulo, tipo, listAutores);
-				listResult.add(eve);
+				if (nomeOrientador.isEmpty() || nomeOrientador.contentEquals("") || nomeOrientador == null) {
+
+				} else {
+					OntoParceiro ontoOrientador = new OntoParceiro(nomeOrientador, idOrientador);
+					listAutores.add(ontoOrientador);
+					OntoClass eve = new OntoClass(titulo, tipo, listAutores);
+					listResult.add(eve);
+				}
+
 			}
 		}
 		return listResult;
@@ -268,8 +273,10 @@ public class PreencherXMLtoOnto {
 							NodeList NodelistAutoresProjeto = aux.getChildNodes();
 							for (int t = 0; t < NodelistAutoresProjeto.getLength(); t++) {
 								Node Autores = NodelistAutoresProjeto.item(t);
+
 								if (Autores != null) {
-									String id = Autores.getAttributes().getNamedItem("NRO-ID-CNPQ").getTextContent();
+									String id = (Autores.getAttributes().getNamedItem("NRO-ID-CNPQ") == null) ? ""
+											: Autores.getAttributes().getNamedItem("NRO-ID-CNPQ").getTextContent();
 									String citacao = Autores.getAttributes().getNamedItem("NOME-PARA-CITACAO")
 											.getTextContent().replaceAll(" ", "_");
 									String nome = Autores.getAttributes().getNamedItem("NOME-COMPLETO").getTextContent()

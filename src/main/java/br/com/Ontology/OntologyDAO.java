@@ -29,7 +29,6 @@ import br.com.Ontology.modelo.OntoPessoa;
 @Service
 public class OntologyDAO {
 
-	private ReadFile read;
 	private File file;
 	private OWLOntologyManager manager;
 	private OWLOntology ontology;
@@ -37,7 +36,7 @@ public class OntologyDAO {
 
 	public OntologyDAO() throws OWLOntologyCreationException {
 		this.manager = OWLManager.createOWLOntologyManager();
-		this.file = this.read.PegarFile();
+		this.file = ReadFile.PegarFile();
 		this.ontology = this.manager.loadOntologyFromOntologyDocument(this.file);
 	}
 
@@ -48,9 +47,10 @@ public class OntologyDAO {
 
 	public void imprimir() {
 		//
-		this.ontology.classesInSignature().forEach(cls -> System.out.println(cls.getIRI().getFragment()));
+		// this.ontology.classesInSignature().forEach(cls ->
+		// System.out.println(cls.getIRI().getFragment()));
 		// this.ontology.logicalAxioms().forEach(System.out::println);
-		this.ontology.signature().forEach(System.out::println);
+		// this.ontology.signature().forEach(System.out::println);
 		//
 		// this.ontology.signature().filter(u
 		// −>
@@ -65,32 +65,39 @@ public class OntologyDAO {
 		addAtribNoIndivido(nome, pessoa.getIdLattes(), "IdLattes");
 		addAtribNoIndivido(nome, pessoa.getNomeCompleto(), "NomeCompleto");
 		addAtribNoIndivido(nome, pessoa.getData(), "DataAtualizacao");
-		// Add dados de projetos de pesquisa
+		//// Add dados de projetos de pesquisa
 		// pessoa.getListOntoProjetoPesquisa().forEach(u -> {
 		// addIndividual(u.getTitulo(), u.getTipo());
-		// addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "Titulo");
-		// addRelacaoInd(nome, u.getTitulo(), "TrabalhouEmProjeto");
+		// addRelacaoInd(nome, u.getTitulo(), "TrabalhoEmProjetoPesquisa");
 		// u.getListAutores().forEach(t -> {
-		// addIndividual(t, "Pessoa");
-		// addRelacaoInd(t, u.getTitulo(), "TrabalhouEmProjeto");
+		// addIndividual((t.getId() == "") ? t.getNome() : t.getId(), "Pessoa");
+		// addRelacaoInd((t.getId() == "") ? t.getNome() : t.getId(), u.getTitulo(),
+		// "TrabalhoEmProjetoPesquisa");
 		// });
-		//
 		// });
-		// Add dados de eventos
+		//// Add dados de eventos
 		// pessoa.getListOntoEvento().forEach(u -> {
 		// addIndividual(u.getTitulo(), u.getTipo());
-		// addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "Titulo");
-		// addRelacaoInd(nome, u.getTitulo(), "Participou");
-		//
+		// addRelacaoInd(nome, u.getTitulo(), "participouEvento");
 		// });
-		// Add dados de formacao
+		// pessoa.getListOntoTrabalhoEvento().forEach(u -> {
+		// addIndividual(u.getTituloTrabalho(), "Producao");
+		// addIndividual(u.getEvento().getTitulo(), "Evento");
+		// addRelacaoInd(nome, u.getTituloTrabalho(), "apresentouTrabalhoEvento");
+		// addRelacaoInd(u.getTituloTrabalho(), u.getEvento().getTitulo(),
+		// "trabalhoEmEvento");
+		// });
+		//// Add dados de formacao
 		// pessoa.getListOntoFormacao().forEach(u -> {
 		// addIndividual(u.getTitulo(), u.getTipo());
-		// addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "TituloTrabalhoFinal");
-		// addRelacaoInd(nome, u.getTitulo(), "Éformado");
+		// addRelacaoInd(nome, u.getTitulo(), "eFormado");
 		// u.getListAutores().forEach(t -> {
-		// addIndividual(t, "Pessoa");
-		// addRelacaoInd(t, nome, "Orientou");
+		// addIndividual((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ?
+		// t.getNome() : t.getId(),
+		// "Pessoa");
+		// addRelacaoInd((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ?
+		// t.getNome() : t.getId(),
+		// nome, "orientou");
 		// });
 		// });
 

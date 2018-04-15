@@ -6,7 +6,7 @@ public class TrabalhoEvento {
 
 	public TrabalhoEvento(String tituloTrabalho, OntoClass evento) {
 		super();
-		this.tituloTrabalho = tituloTrabalho;
+		this.tituloTrabalho = tituloTrabalho.replaceAll(" ", "_");
 		this.evento = evento;
 	}
 

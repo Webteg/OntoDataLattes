@@ -32,20 +32,14 @@ public class PreencherOntologia {
 
 	private void inserirDadosGerais()
 			throws XPathExpressionException, OWLOntologyStorageException, FileNotFoundException {
-		PreencherXMLtoOnto preencherXMLtoOnto = new PreencherXMLtoOnto(this.xmlfile);
+		BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(this.xmlfile);
 		OntoPessoa pessoa = new OntoPessoa(preencherXMLtoOnto.NomeCompleto().replaceAll(" ", "_"),
 				preencherXMLtoOnto.IDLattes(), preencherXMLtoOnto.UltimaAtualizacao());
+
 		preencherXMLtoOnto.buscarXML(pessoa);
-		System.out.println(pessoa.toString());
+		// System.out.println(pessoa.toString());
 		this.ontologyDAO.preencherOnto(pessoa);
 
-		// this.ontologyDAO.addIndividual("WWW", "Pessoa");
-		// this.ontologyDAO.addAtribNoIndivido(this.NomeCurriculo, searchXML.IDLattes(),
-		// "IdLattes");
-		// this.ontologyDAO.addAtribNoIndivido(this.NomeCurriculo,
-		// searchXML.NomeCompleto(), "NomeCompleto");
-		this.imprimir();
-		// this.ontologyDAO.saveOntologyDAO();
 	}
 
 	public void imprimir() {
