@@ -13,7 +13,6 @@ public class OntoClass {
 		this.Titulo = titulo.replaceAll(" ", "_");
 		this.Tipo = tipo;
 		this.ListAutores = listAutores;
-
 	}
 
 	public OntoClass(String titulo, String tipo, int ano) {

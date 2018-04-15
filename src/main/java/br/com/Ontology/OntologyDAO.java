@@ -66,16 +66,16 @@ public class OntologyDAO {
 		addAtribNoIndivido(nome, pessoa.getNomeCompleto(), "NomeCompleto");
 		addAtribNoIndivido(nome, pessoa.getData(), "DataAtualizacao");
 		// Add dados de projetos de pesquisa
-		pessoa.getListOntoProjetoPesquisa().forEach(u -> {
-			addIndividual(u.getTitulo(), u.getTipo());
-			addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "Titulo");
-			addRelacaoInd(nome, u.getTitulo(), "TrabalhouEmProjeto");
-			u.getListAutores().forEach(t -> {
-				addIndividual(t, "Pessoa");
-				addRelacaoInd(t, u.getTitulo(), "TrabalhouEmProjeto");
-			});
-
-		});
+		// pessoa.getListOntoProjetoPesquisa().forEach(u -> {
+		// addIndividual(u.getTitulo(), u.getTipo());
+		// addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "Titulo");
+		// addRelacaoInd(nome, u.getTitulo(), "TrabalhouEmProjeto");
+		// u.getListAutores().forEach(t -> {
+		// addIndividual(t, "Pessoa");
+		// addRelacaoInd(t, u.getTitulo(), "TrabalhouEmProjeto");
+		// });
+		//
+		// });
 		// Add dados de eventos
 		// pessoa.getListOntoEvento().forEach(u -> {
 		// addIndividual(u.getTitulo(), u.getTipo());
@@ -84,15 +84,15 @@ public class OntologyDAO {
 		//
 		// });
 		// Add dados de formacao
-		pessoa.getListOntoFormacao().forEach(u -> {
-			addIndividual(u.getTitulo(), u.getTipo());
-			addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "TituloTrabalhoFinal");
-			addRelacaoInd(nome, u.getTitulo(), "Éformado");
-			u.getListAutores().forEach(t -> {
-				addIndividual(t, "Pessoa");
-				addRelacaoInd(t, nome, "Orientou");
-			});
-		});
+		// pessoa.getListOntoFormacao().forEach(u -> {
+		// addIndividual(u.getTitulo(), u.getTipo());
+		// addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "TituloTrabalhoFinal");
+		// addRelacaoInd(nome, u.getTitulo(), "Éformado");
+		// u.getListAutores().forEach(t -> {
+		// addIndividual(t, "Pessoa");
+		// addRelacaoInd(t, nome, "Orientou");
+		// });
+		// });
 
 		saveOntologyDAO();
 		// imprimir();

@@ -6,11 +6,14 @@ public class OntoPessoa {
 	private String NomeCompleto;
 	private String IdLattes;
 	private String Data;
-	private ArrayList<OntoClass> ListOntoAreaAtuacao;
+	private ArrayList<AreaConhecimento> ListOntoAreaAtuacao;
+	private ArrayList<TrabalhoEvento> ListOntoTrabalhoEvento;
 	private ArrayList<OntoClass> ListOntoEvento;
+	private ArrayList<OntoClass> ListOntoOrgEvento;
 	private ArrayList<OntoClass> ListOntoFormacao;
 	private ArrayList<OntoClass> ListOntoProducao;
 	private ArrayList<OntoClass> ListOntoProjetoPesquisa;
+	private ArrayList<OntoClass> listOntoBanca;
 
 	public OntoPessoa(String nomeCompleto, String idLattes, String data) {
 		super();
@@ -43,11 +46,11 @@ public class OntoPessoa {
 		this.Data = data;
 	}
 
-	public ArrayList<OntoClass> getListOntoAreaAtuacao() {
+	public ArrayList<AreaConhecimento> getListOntoAreaAtuacao() {
 		return this.ListOntoAreaAtuacao;
 	}
 
-	public void setListOntoAreaAtuacao(ArrayList<OntoClass> listOntoAreaAtuacao) {
+	public void setListOntoAreaAtuacao(ArrayList<AreaConhecimento> listOntoAreaAtuacao) {
 		this.ListOntoAreaAtuacao = listOntoAreaAtuacao;
 	}
 
@@ -83,6 +86,14 @@ public class OntoPessoa {
 		this.ListOntoProjetoPesquisa = listOntoProjetoPesquisa;
 	}
 
+	public ArrayList<OntoClass> getListOntoBanca() {
+		return this.listOntoBanca;
+	}
+
+	public void setListOntoBanca(ArrayList<OntoClass> listOntoBanca) {
+		this.listOntoBanca = listOntoBanca;
+	}
+
 	@Override
 	public String toString() {
 		return "OntoPessoa [NomeCompleto=" + this.NomeCompleto + "\n, IdLattes=" + this.IdLattes + "\n, Data="
@@ -91,5 +102,22 @@ public class OntoPessoa {
 				+ "\n, ListOntoProducao=" + this.ListOntoProducao.toString() + "\n, ListOntoProjetoPesquisa="
 				+ this.ListOntoProjetoPesquisa.toString() + "]";
 	}
+
+	public ArrayList<OntoClass> getListOntoOrgEvento() {
+		return this.ListOntoOrgEvento;
+	}
+
+	public void setListOntoOrgEvento(ArrayList<OntoClass> listOntoOrgEvento) {
+		this.ListOntoOrgEvento = listOntoOrgEvento;
+	}
+
+	public ArrayList<TrabalhoEvento> getListOntoTrabalhoEvento() {
+		return ListOntoTrabalhoEvento;
+	}
+
+	public void setListOntoTrabalhoEvento(ArrayList<TrabalhoEvento> listOntoTrabalhoEvento) {
+		ListOntoTrabalhoEvento = listOntoTrabalhoEvento;
+	}
+
 
 }

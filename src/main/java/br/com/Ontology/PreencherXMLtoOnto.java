@@ -12,9 +12,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import br.com.Ontology.modelo.AreaConhecimento;
 import br.com.Ontology.modelo.OntoClass;
 import br.com.Ontology.modelo.OntoParceiro;
 import br.com.Ontology.modelo.OntoPessoa;
+import br.com.Ontology.modelo.TrabalhoEvento;
 
 public class PreencherXMLtoOnto {
 	XPath xpath;
@@ -28,20 +30,88 @@ public class PreencherXMLtoOnto {
 
 	public OntoPessoa buscarXML(OntoPessoa pessoa) throws XPathExpressionException {
 		pessoa.setListOntoAreaAtuacao(listOntoAreaAtuacao());
+		pessoa.setListOntoTrabalhoEvento(listOntoTrabalhoEvento());
 		pessoa.setListOntoEvento(listOntoEvento());
+		pessoa.setListOntoOrgEvento(listOrganizacaoEvento());
 		pessoa.setListOntoFormacao(listOntoFormacao());
 		pessoa.setListOntoProducao(listOntoProducao());
 		pessoa.setListOntoProjetoPesquisa(listOntoProjetoPesquisa());
+		pessoa.setListOntoBanca(listOntoBanca());
 		return pessoa;
 	}
 
-	private ArrayList<OntoClass> listOntoProjetoPesquisa() throws XPathExpressionException {
-		ArrayList<OntoClass> result = BuscaProjetoPesquisa();
+	public String UltimaAtualizacao() throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile("string(/CURRICULO-VITAE[1]/@DATA-ATUALIZACAO)");
+		StringBuilder sb = new StringBuilder(expr.evaluate(this.xmlfile));
+		sb.insert(8, " ");
+		sb.insert(4, "/");
+		sb.insert(2, "/");
+		return sb.toString();
+	}
+
+	public String IDLattes() throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile("string(/CURRICULO-VITAE[1]/@NUMERO-IDENTIFICADOR)");
+		return expr.evaluate(this.xmlfile);
+	}
+
+	public String NomeCompleto() throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(this.xmlfile);
+	}
+
+	public String NomeCitacao() throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-EM-CITACOES-BIBLIOGRAFICAS)");
+		return expr.evaluate(this.xmlfile);
+	}
+
+	public String ResumoCV() throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile("string(/*/DADOS-GERAIS/RESUMO-CV[1]/@TEXTO-RESUMO-CV-RH)");
+		return expr.evaluate(this.xmlfile);
+	}
+
+	public boolean DedicaoExclusiva() throws XPathExpressionException {
+		XPathExpression expr = this.xpath
+				.compile("//ATUACAO-PROFISSIONAL/VINCULOS[@FLAG-DEDICACAO-EXCLUSIVA='SIM' and  @ANO-FIM='']");
+		NodeList dedicacao = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
+		if (dedicacao.getLength() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public ArrayList<OntoClass> listOntoProducao() {
+		ArrayList<OntoClass> result = new ArrayList<>();
 		return result;
 	}
 
-	private ArrayList<OntoClass> listOntoProducao() {
+	public ArrayList<TrabalhoEvento> listOntoTrabalhoEvento() throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile("//TRABALHO-EM-EVENTOS");
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
+		ArrayList<TrabalhoEvento> listResult = new ArrayList<>();
+		for (int i = 0; i < livros.getLength(); i++) {
+			Node TipoNode = livros.item(i);
+			String tituloTrabalho = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-TRABALHO")
+					.getTextContent().replaceAll("\n", " ");
+			String tituloEvento = TipoNode.getChildNodes().item(1).getAttributes().getNamedItem("NOME-DO-EVENTO")
+					.getTextContent().replaceAll("\n", " ");
+			int ano = Integer.valueOf(
+					TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO-DO-TRABALHO").getTextContent());
+
+			OntoClass evento = new OntoClass(tituloEvento, "TrabalhoEmEvento", ano);
+			TrabalhoEvento item = new TrabalhoEvento(tituloTrabalho, evento);
+			listResult.add(item);
+		}
+		return listResult;
+	}
+
+	public ArrayList<OntoClass> listOntoBanca() throws XPathExpressionException {
 		ArrayList<OntoClass> result = new ArrayList<>();
+		result.addAll(BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-GRADUACAO", "BancaGraduacao"));
+		result.addAll(BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-MESTRADO", "BancaMestrado"));
+		result.addAll(BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-DOUTORADO", "BancaDoutorado"));
+		result.addAll(BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-EXAME-QUALIFICACAO", "BancaQualificacao"));
+		result.addAll(BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-APERFEICOAMENTO-ESPECIALIZACAO", "BancaAperEspe"));
 		return result;
 	}
 
@@ -49,6 +119,7 @@ public class PreencherXMLtoOnto {
 		ArrayList<OntoClass> result = new ArrayList<>();
 		result.addAll(buscaFormacao("//GRADUACAO", "Graduacao", 1, "TITULO-DO-TRABALHO-DE-CONCLUSAO-DE-CURSO",
 				"NOME-DO-ORIENTADOR", "NUMERO-ID-ORIENTADOR"));
+		// não testado
 		result.addAll(buscaFormacao("//APERFEICOAMENTO", "Aperfeicoamento", 1, "TITULO-DA-MONOGRAFIA",
 				"NOME-DO-ORIENTADOR", null));
 		result.addAll(buscaFormacao("//ESPECIALIZACAO", "Especializacao", 1, "TITULO-DA-MONOGRAFIA",
@@ -57,35 +128,54 @@ public class PreencherXMLtoOnto {
 				"NOME-COMPLETO-DO-ORIENTADOR", "NUMERO-ID-ORIENTADOR"));
 		result.addAll(buscaFormacao("//DOUTORADO", "Doutorado", 1, "TITULO-DA-DISSERTACAO-TESE",
 				"NOME-COMPLETO-DO-ORIENTADOR", "NUMERO-ID-ORIENTADOR"));
+		// Não testado
 		result.addAll(buscaFormacao("//MESTRADO-PROFISSIONALIZANTE", "MestradoProfissional", 1,
 				"TITULO-DA-DISSERTACAO-TESE", "NOME-COMPLETO-DO-ORIENTADOR", "NUMERO-ID-ORIENTADOR"));
 		return result;
 	}
 
+	public ArrayList<OntoClass> listOrganizacaoEvento() throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile("//ORGANIZACAO-DE-EVENTO");
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
+		ArrayList<OntoClass> listResult = new ArrayList<>();
+		for (int i = 0; i < livros.getLength(); i++) {
+			Node TipoNode = livros.item(i);
+			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO").getTextContent()
+					.replaceAll("\n", " ");
+			int ano = Integer
+					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
+
+			OntoClass eve = new OntoClass(titulo, "OrganizacaoEvento", ano);
+			listResult.add(eve);
+		}
+		return listResult;
+	}
+
 	public ArrayList<OntoClass> listOntoEvento() throws XPathExpressionException {
 		ArrayList<OntoClass> result = new ArrayList<>();
 		result.addAll(buscaEvento("//PARTICIPACAO-EM-CONGRESSO", "Congresso", 1, "NOME-DO-EVENTO"));
-//		result.addAll(buscaEvento("//PARTICIPACAO-EM-FEIRA", "Feira", 1, "NOME-DO-EVENTO"));
-//		result.addAll(buscaEvento("//PARTICIPACAO-EM-SEMINARIO", "Seminario", 1, "NOME-DO-EVENTO"));
-//		result.addAll(buscaEvento("//PARTICIPACAO-EM-SIMPOSIO", "Simposio", 1, "NOME-DO-EVENTO"));
-//		result.addAll(buscaEvento("//PARTICIPACAO-EM-ENCONTRO", "Encontro", 1, "NOME-DO-EVENTO"));
-//		result.addAll(buscaEvento("//PARTICIPACAO-EM-EXPOSICAO", "Exposicao", 1, "NOME-DO-EVENTO"));
+		// não testado
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-FEIRA", "Feira", 1, "NOME-DO-EVENTO"));
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-SEMINARIO", "Seminario", 1, "NOME-DO-EVENTO"));
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-SIMPOSIO", "Simposio", 1, "NOME-DO-EVENTO"));
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-ENCONTRO", "Encontro", 1, "NOME-DO-EVENTO"));
+		// não testado
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-EXPOSICAO", "Exposicao", 1, "NOME-DO-EVENTO"));
 		return result;
 	}
 
-	private ArrayList<OntoClass> listOntoAreaAtuacao() throws XPathExpressionException {
+	public ArrayList<AreaConhecimento> listOntoAreaAtuacao() throws XPathExpressionException {
 		XPathExpression expr = this.xpath.compile("//AREA-DE-ATUACAO");
 		NodeList listaxml = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
-		ArrayList<OntoClass> listResult = new ArrayList<>();
+		ArrayList<AreaConhecimento> listResult = new ArrayList<>();
 		for (int i = 0; i < listaxml.getLength(); i++) {
 			Node TipoNode = listaxml.item(i);
-			String AreaConhecimento = TipoNode.getAttributes().getNamedItem("NOME-DA-AREA-DO-CONHECIMENTO")
+			String areaConhecimento = TipoNode.getAttributes().getNamedItem("NOME-DA-AREA-DO-CONHECIMENTO")
 					.getTextContent();
-			String SubAreaConhecimento = TipoNode.getAttributes().getNamedItem("NOME-DA-SUB-AREA-DO-CONHECIMENTO")
+			String subAreaConhecimento = TipoNode.getAttributes().getNamedItem("NOME-DA-SUB-AREA-DO-CONHECIMENTO")
 					.getTextContent();
-			String NomeEspecialidade = TipoNode.getAttributes().getNamedItem("NOME-DA-ESPECIALIDADE").getTextContent();
-
-			ArrayList<String> listAutores = new ArrayList<>();
+			String nomeEspecialidade = TipoNode.getAttributes().getNamedItem("NOME-DA-ESPECIALIDADE").getTextContent();
+			listResult.add(new AreaConhecimento(areaConhecimento, subAreaConhecimento, nomeEspecialidade));
 		}
 		return listResult;
 	}
@@ -130,7 +220,35 @@ public class PreencherXMLtoOnto {
 		return listResult;
 	}
 
-	private ArrayList<OntoClass> BuscaProjetoPesquisa() throws XPathExpressionException {
+	public ArrayList<OntoClass> BuscaBanca(String raiz, String tipo) throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
+		ArrayList<OntoClass> ListArtigoCompleto = new ArrayList<>();
+		for (int i = 0; i < livros.getLength(); i++) {
+			Node TipoNode = livros.item(i);
+			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO").getTextContent();
+
+			NodeList listAutores = TipoNode.getChildNodes();
+			ArrayList<OntoParceiro> listParticipantes = new ArrayList<>();
+			for (int j = 0; j < listAutores.getLength(); j++) {
+				Node autoresNode = listAutores.item(j);
+				if (autoresNode.getNodeName().contentEquals("PARTICIPANTE-BANCA")) {
+					String nome = autoresNode.getAttributes().getNamedItem("NOME-COMPLETO-DO-PARTICIPANTE-DA-BANCA")
+							.getTextContent();
+					String citacao = autoresNode.getAttributes()
+							.getNamedItem("NOME-PARA-CITACAO-DO-PARTICIPANTE-DA-BANCA").getTextContent();
+					String id = autoresNode.getAttributes().getNamedItem("NRO-ID-CNPQ").getTextContent();
+					OntoParceiro ontopar = new OntoParceiro(nome, citacao, id);
+					listParticipantes.add(ontopar);
+				}
+			}
+			OntoClass itemBanca = new OntoClass(titulo, tipo, listParticipantes);
+			ListArtigoCompleto.add(itemBanca);
+		}
+		return ListArtigoCompleto;
+	}
+
+	public ArrayList<OntoClass> listOntoProjetoPesquisa() throws XPathExpressionException {
 		XPathExpression expr = this.xpath.compile("//PARTICIPACAO-EM-PROJETO");
 		NodeList projetos = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<OntoClass> listResult = new ArrayList<>();
@@ -143,20 +261,20 @@ public class PreencherXMLtoOnto {
 
 				} else {
 					NodeList auxlist = TipoNode.getChildNodes().item(0).getChildNodes();
-					ArrayList<String> listAutores = new ArrayList<>();
+					ArrayList<OntoParceiro> listAutores = new ArrayList<>();
 					for (int j = 0; j < auxlist.getLength(); j++) {
 						Node aux = auxlist.item(j);
 						if (aux.getNodeName().contentEquals("EQUIPE-DO-PROJETO")) {
 							NodeList NodelistAutoresProjeto = aux.getChildNodes();
 							for (int t = 0; t < NodelistAutoresProjeto.getLength(); t++) {
 								Node Autores = NodelistAutoresProjeto.item(t);
-								// String aux0 =
-								// Autores.getAttributes().getNamedItem("NOME-COMPLETO").getTextContent());
-
-								Node nn = Autores.getAttributes().getNamedItem("NRO-ID-CNPQ");
-								if (nn != null) {
-									String aux0 = nn.getTextContent();
-									listAutores.add(aux0.replaceAll(" ", "_"));
+								if (Autores != null) {
+									String id = Autores.getAttributes().getNamedItem("NRO-ID-CNPQ").getTextContent();
+									String citacao = Autores.getAttributes().getNamedItem("NOME-PARA-CITACAO")
+											.getTextContent().replaceAll(" ", "_");
+									String nome = Autores.getAttributes().getNamedItem("NOME-COMPLETO").getTextContent()
+											.replaceAll(" ", "_");
+									listAutores.add(new OntoParceiro(nome, citacao, id));
 								}
 							}
 						}
