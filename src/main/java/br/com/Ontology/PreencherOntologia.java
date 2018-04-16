@@ -33,8 +33,10 @@ public class PreencherOntologia {
 	private void inserirDadosGerais()
 			throws XPathExpressionException, OWLOntologyStorageException, FileNotFoundException {
 		BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(this.xmlfile);
-		OntoPessoa pessoa = new OntoPessoa(preencherXMLtoOnto.NomeCompleto().replaceAll(" ", "_"),
-				preencherXMLtoOnto.IDLattes(), preencherXMLtoOnto.UltimaAtualizacao());
+		OntoPessoa pessoa = new OntoPessoa(
+				preencherXMLtoOnto.NomeCompleto().replaceAll("\n", " ").replaceAll(" ", "_").replaceAll("'", ""),
+				preencherXMLtoOnto.IDLattes().replaceAll("\n", " ").replaceAll(" ", "_").replaceAll("'", ""),
+				preencherXMLtoOnto.UltimaAtualizacao().replaceAll("\n", " ").replaceAll(" ", "_").replaceAll("'", ""));
 
 		preencherXMLtoOnto.buscarXML(pessoa);
 		// System.out.println(pessoa.toString());

@@ -1,0 +1,1116 @@
+Prefix(:=<http://www.datalattes.com/ontologies/datalattes.owl>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.datalattes.com/ontologies/datalattes.owl>
+
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Aerofotografia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Analitica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Ano>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Aparelho>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Aperfeicoamento>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Apresentacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObra>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtistica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaCoreografia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaLiteraria>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaMusical>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaTeatral>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTV>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVDanca>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVMusica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVTeatro>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoTrabalho>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Arranjo>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArranjoMusical>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasAudiovisiual>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasCircense>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasCoreografia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasDiversas>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasOperistica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasPerfomatica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasRadialistica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasTeatral>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisCinema>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisDesenho>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisEscultura>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisFotografia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisGravura>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisInstalacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisPintura>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisTelevisao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisVideo>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Artigo>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtigoPublicado>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ArtigosAceitos>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Assesoria>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Banca>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#BancaAperEspe>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#BancaDoutorado>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#BancaGraduacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#BancaMestrado>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#BancaQualificacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Blog>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Capitulo>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Carta>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CartaMapa>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CienciaHumanas>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasAgrarias>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasBiologicas>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasDaSaude>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasExatasTerra>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasSociasAplicadas>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Comentario>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Composicao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ComposicaoMusical>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Computacional>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Consultoria>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Cultivacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CultivacaoProtegida>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CultivacaoRegistrada>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Curadoria>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoAperfeicoamento>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoAperfeicoamento>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoEspecializacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoExtensao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoEspecializacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoExtencao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistrado>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoCurtaDuracao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoLongaDuracao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#DesenhoTecnico>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Diversas>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Doutorado>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Editoracao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoAnais>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoCatalogo>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoColetanea>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoEnciclopedia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoLivro>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoPeriodico>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ElaboracaoProjeto>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Engenharias>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#EnsinoSuperior>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Entrevista>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Equipamento>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Especializacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Evento>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#FarmacoSimilar>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#FormacaçãoAcademica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Forum>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Fotografia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Graduacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#IniciacaoCientifica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Instrumental>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Instrumento>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Interpretacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Introducao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Jornal>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#LatoSensu>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#LiguisticaLetrasArtes>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Livro>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#LivroCompleto>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#LivroOrganizado>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#MBA>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Mapa>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Maquete>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Marca>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#MaterialDidatico>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#MesaRedonda>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Mestrado>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#MestradoAcademico>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#MestradoProfissional>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#MidiaSocial>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Montagem>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Multimidia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Museologia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Musica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisCinema>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisDesenho>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisEscultura>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisFotografia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisGravura>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisInstalacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisPintura>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisTelevisao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisVideo>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Organizacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#OrganizacaoEvento>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Parecer>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Partitura>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Patente>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Pedagogica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Piloto>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Pos-doutorado>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Pos-graduacao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Posfacio>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Prefacio>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Processual>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Producao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoBibliografica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ProdutoTecnilogico>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Programa>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ProgramaRadioTV>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Projeto>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ProjetoPesquisa>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Prototipo>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#PublicacaoPartitura>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#RedeSocial>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#RegistroFonografico>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#RelatorioPesquisa>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#RelatorioTecnico>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Revista>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#ServicoSaude>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Software>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Sonoplastia>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaCinema>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaMusica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaRadio>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaTeatro>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaTelevisao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#StrictoSensu>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Terapeutica>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#TextoMidias>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#TopograficaCircuitoIntegrado>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhosEventos>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#Traducao>))
+Declaration(Class(<http://www.datalattes.com/ontologies/datalattes.owl#TrilhaSonora>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#ProjetoTeveParticipante>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#apresentouTrabalhoEvento>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#areaAtuacaoTemPesquisador>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#bancaTemParticipante>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eFormado>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemPresenca>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalho>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalhoDe>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#foiOrientadoPor>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#orientou>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeBanca>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeTrabalho>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#trabalhoEmEvento>))
+Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#trabalhoTemPesquisador>))
+Declaration(ObjectProperty(owl:differentFrom))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao>))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#ISBN>))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#ISSN>))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes>))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#NomeAreaDoconhecimento>))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto>))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#NomeSubAreaConhecimento>))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#Titulo>))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#TituloCurso>))
+Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#TituloTrabalhoFinal>))
+Declaration(AnnotationProperty(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled>))
+Declaration(Datatype(<http://www.datalattes.com/ontologies/datalattes.owl#xsd:gMonth>))
+Declaration(Datatype(xsd:date))
+Declaration(Datatype(xsd:gYear))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#ProjetoTeveParticipante> (<http://www.datalattes.com/ontologies/datalattes.owl#ProjetoTeveParticipante>)
+
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#ProjetoTeveParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#apresentouTrabalhoEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#apresentouTrabalhoEvento>)
+
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#apresentouTrabalhoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalhoDe>)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#apresentouTrabalhoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#apresentouTrabalhoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Producao>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#areaAtuacaoTemPesquisador> (<http://www.datalattes.com/ontologies/datalattes.owl#areaAtuacaoTemPesquisador>)
+
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#areaAtuacaoTemPesquisador> <http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#bancaTemParticipante> (<http://www.datalattes.com/ontologies/datalattes.owl#bancaTemParticipante>)
+
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#bancaTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#participouDeBanca>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> (<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao>)
+
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> <http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> (<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante>)
+
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#participouEvento>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalho> (<http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalho>)
+
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#trabalhoEmEvento>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#foiOrientadoPor> (<http://www.datalattes.com/ontologies/datalattes.owl#foiOrientadoPor>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#foiOrientadoPor> owl:topObjectProperty)
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#foiOrientadoPor> <http://www.datalattes.com/ontologies/datalattes.owl#orientou>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> owl:topObjectProperty)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#orientou> (<http://www.datalattes.com/ontologies/datalattes.owl#orientou>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#orientou> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#orientou> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#orientou> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#participouDeBanca> (<http://www.datalattes.com/ontologies/datalattes.owl#participouDeBanca>)
+
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeBanca> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeBanca> <http://www.datalattes.com/ontologies/datalattes.owl#Banca>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#participouDeTrabalho> (<http://www.datalattes.com/ontologies/datalattes.owl#participouDeTrabalho>)
+
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#trabalhoTemPesquisador>)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#Producao>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento>)
+
+SubObjectPropertyOf(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao> (<http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao>)
+
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
+# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#trabalhoEmEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#trabalhoEmEvento>)
+
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#trabalhoEmEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Producao>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#trabalhoEmEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Evento>)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> (<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao>)
+
+DataPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> xsd:string)
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#ISBN> (<http://www.datalattes.com/ontologies/datalattes.owl#ISBN>)
+
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#ISBN> <http://www.datalattes.com/ontologies/datalattes.owl#Livro>)
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#ISBN> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhosEventos>)
+DataPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#ISBN> xsd:string)
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#ISSN> (<http://www.datalattes.com/ontologies/datalattes.owl#ISSN>)
+
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#ISSN> <http://www.datalattes.com/ontologies/datalattes.owl#Artigo>)
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#ISSN> <http://www.datalattes.com/ontologies/datalattes.owl#TextoMidias>)
+DataPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#ISSN> xsd:string)
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> (<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes>)
+
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+DataPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> xsd:string)
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#NomeAreaDoconhecimento> (<http://www.datalattes.com/ontologies/datalattes.owl#NomeAreaDoconhecimento>)
+
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#NomeAreaDoconhecimento> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+DataPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#NomeAreaDoconhecimento> xsd:string)
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> (<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto>)
+
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+DataPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> xsd:string)
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#NomeSubAreaConhecimento> (<http://www.datalattes.com/ontologies/datalattes.owl#NomeSubAreaConhecimento>)
+
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#NomeSubAreaConhecimento> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+DataPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#NomeSubAreaConhecimento> xsd:string)
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#Titulo> (<http://www.datalattes.com/ontologies/datalattes.owl#Titulo>)
+
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#Titulo> <http://www.datalattes.com/ontologies/datalattes.owl#Evento>)
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#Titulo> <http://www.datalattes.com/ontologies/datalattes.owl#Producao>)
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#Titulo> <http://www.datalattes.com/ontologies/datalattes.owl#ProjetoPesquisa>)
+DataPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#Titulo> xsd:string)
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#TituloCurso> (<http://www.datalattes.com/ontologies/datalattes.owl#TituloCurso>)
+
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#TituloCurso> <http://www.datalattes.com/ontologies/datalattes.owl#EnsinoSuperior>)
+
+# Data Property: <http://www.datalattes.com/ontologies/datalattes.owl#TituloTrabalhoFinal> (<http://www.datalattes.com/ontologies/datalattes.owl#TituloTrabalhoFinal>)
+
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#TituloTrabalhoFinal> <http://www.datalattes.com/ontologies/datalattes.owl#Banca>)
+DataPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#TituloTrabalhoFinal> <http://www.datalattes.com/ontologies/datalattes.owl#EnsinoSuperior>)
+DataPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#TituloTrabalhoFinal> xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Aerofotografia> (<http://www.datalattes.com/ontologies/datalattes.owl#Aerofotografia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Aerofotografia> <http://www.datalattes.com/ontologies/datalattes.owl#CartaMapa>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Analitica> (<http://www.datalattes.com/ontologies/datalattes.owl#Analitica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Analitica> <http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Aparelho> (<http://www.datalattes.com/ontologies/datalattes.owl#Aparelho>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Aparelho> <http://www.datalattes.com/ontologies/datalattes.owl#Prototipo>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Aperfeicoamento> (<http://www.datalattes.com/ontologies/datalattes.owl#Aperfeicoamento>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Aperfeicoamento> <http://www.datalattes.com/ontologies/datalattes.owl#LatoSensu>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Apresentacao> (<http://www.datalattes.com/ontologies/datalattes.owl#Apresentacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Apresentacao> <http://www.datalattes.com/ontologies/datalattes.owl#Livro>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObra> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObra>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObra> <http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtistica> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtistica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtistica> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaCoreografia> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaCoreografia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaCoreografia> <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaLiteraria> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaLiteraria>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaLiteraria> <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaMusical> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaMusical>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaMusical> <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaTeatral> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaTeatral>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtisticaTeatral> <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoObraArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTV> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTV>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTV> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVDanca> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVDanca>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVDanca> <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTV>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVMusica> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVMusica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVMusica> <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTV>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVTeatro> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVTeatro>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTVTeatro> <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadioTV>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoTrabalho> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoTrabalho>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Arranjo> (<http://www.datalattes.com/ontologies/datalattes.owl#Arranjo>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Arranjo> <http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArranjoMusical> (<http://www.datalattes.com/ontologies/datalattes.owl#ArranjoMusical>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArranjoMusical> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasAudiovisiual> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasAudiovisiual>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasAudiovisiual> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasCircense> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasCircense>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasCircense> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasCoreografia> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasCoreografia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasCoreografia> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasDiversas> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasDiversas>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasDiversas> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasOperistica> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasOperistica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasOperistica> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasPerfomatica> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasPerfomatica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasPerfomatica> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasRadialistica> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasRadialistica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasRadialistica> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasTeatral> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasTeatral>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicasTeatral> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesCenicas>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisCinema> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisCinema>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisCinema> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisDesenho> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisDesenho>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisDesenho> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisEscultura> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisEscultura>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisEscultura> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisFotografia> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisFotografia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisFotografia> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisGravura> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisGravura>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisGravura> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisInstalacao> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisInstalacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisInstalacao> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisPintura> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisPintura>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisPintura> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisTelevisao> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisTelevisao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisTelevisao> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisVideo> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisVideo>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuaisVideo> <http://www.datalattes.com/ontologies/datalattes.owl#ArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Artigo> (<http://www.datalattes.com/ontologies/datalattes.owl#Artigo>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Artigo> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoBibliografica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtigoPublicado> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtigoPublicado>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtigoPublicado> <http://www.datalattes.com/ontologies/datalattes.owl#Artigo>)
+DisjointClasses(<http://www.datalattes.com/ontologies/datalattes.owl#ArtigoPublicado> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhosEventos>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ArtigosAceitos> (<http://www.datalattes.com/ontologies/datalattes.owl#ArtigosAceitos>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtigosAceitos> <http://www.datalattes.com/ontologies/datalattes.owl#Artigo>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Assesoria> (<http://www.datalattes.com/ontologies/datalattes.owl#Assesoria>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Assesoria> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#BancaAperEspe> (<http://www.datalattes.com/ontologies/datalattes.owl#BancaAperEspe>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#BancaAperEspe> <http://www.datalattes.com/ontologies/datalattes.owl#Banca>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#BancaDoutorado> (<http://www.datalattes.com/ontologies/datalattes.owl#BancaDoutorado>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#BancaDoutorado> <http://www.datalattes.com/ontologies/datalattes.owl#Banca>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#BancaGraduacao> (<http://www.datalattes.com/ontologies/datalattes.owl#BancaGraduacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#BancaGraduacao> <http://www.datalattes.com/ontologies/datalattes.owl#Banca>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#BancaMestrado> (<http://www.datalattes.com/ontologies/datalattes.owl#BancaMestrado>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#BancaMestrado> <http://www.datalattes.com/ontologies/datalattes.owl#Banca>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#BancaQualificacao> (<http://www.datalattes.com/ontologies/datalattes.owl#BancaQualificacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#BancaQualificacao> <http://www.datalattes.com/ontologies/datalattes.owl#Banca>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Blog> (<http://www.datalattes.com/ontologies/datalattes.owl#Blog>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Blog> <http://www.datalattes.com/ontologies/datalattes.owl#MidiaSocial>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Capitulo> (<http://www.datalattes.com/ontologies/datalattes.owl#Capitulo>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Capitulo> <http://www.datalattes.com/ontologies/datalattes.owl#Livro>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Carta> (<http://www.datalattes.com/ontologies/datalattes.owl#Carta>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Carta> <http://www.datalattes.com/ontologies/datalattes.owl#CartaMapa>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CartaMapa> (<http://www.datalattes.com/ontologies/datalattes.owl#CartaMapa>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CartaMapa> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CienciaHumanas> (<http://www.datalattes.com/ontologies/datalattes.owl#CienciaHumanas>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CienciaHumanas> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CienciasAgrarias> (<http://www.datalattes.com/ontologies/datalattes.owl#CienciasAgrarias>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasAgrarias> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CienciasBiologicas> (<http://www.datalattes.com/ontologies/datalattes.owl#CienciasBiologicas>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasBiologicas> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CienciasDaSaude> (<http://www.datalattes.com/ontologies/datalattes.owl#CienciasDaSaude>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasDaSaude> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CienciasExatasTerra> (<http://www.datalattes.com/ontologies/datalattes.owl#CienciasExatasTerra>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasExatasTerra> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CienciasSociasAplicadas> (<http://www.datalattes.com/ontologies/datalattes.owl#CienciasSociasAplicadas>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CienciasSociasAplicadas> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Comentario> (<http://www.datalattes.com/ontologies/datalattes.owl#Comentario>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Comentario> <http://www.datalattes.com/ontologies/datalattes.owl#ProgramaRadioTV>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Composicao> (<http://www.datalattes.com/ontologies/datalattes.owl#Composicao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Composicao> <http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ComposicaoMusical> (<http://www.datalattes.com/ontologies/datalattes.owl#ComposicaoMusical>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ComposicaoMusical> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Computacional> (<http://www.datalattes.com/ontologies/datalattes.owl#Computacional>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Computacional> <http://www.datalattes.com/ontologies/datalattes.owl#Software>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Consultoria> (<http://www.datalattes.com/ontologies/datalattes.owl#Consultoria>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Consultoria> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Cultivacao> (<http://www.datalattes.com/ontologies/datalattes.owl#Cultivacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Cultivacao> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CultivacaoProtegida> (<http://www.datalattes.com/ontologies/datalattes.owl#CultivacaoProtegida>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CultivacaoProtegida> <http://www.datalattes.com/ontologies/datalattes.owl#Cultivacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CultivacaoRegistrada> (<http://www.datalattes.com/ontologies/datalattes.owl#CultivacaoRegistrada>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CultivacaoRegistrada> <http://www.datalattes.com/ontologies/datalattes.owl#Cultivacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Curadoria> (<http://www.datalattes.com/ontologies/datalattes.owl#Curadoria>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Curadoria> <http://www.datalattes.com/ontologies/datalattes.owl#OrganizacaoEvento>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoAperfeicoamento> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoAperfeicoamento>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoAperfeicoamento> <http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoLongaDuracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracao> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracao> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoAperfeicoamento> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoAperfeicoamento>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoAperfeicoamento> <http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoEspecializacao> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoEspecializacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoEspecializacao> <http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoExtensao> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoExtensao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracaoExtensao> <http://www.datalattes.com/ontologies/datalattes.owl#CursoCurtaDuracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoEspecializacao> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoEspecializacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoEspecializacao> <http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoLongaDuracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoExtencao> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoExtencao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoExtencao> <http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoLongaDuracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistrado> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistrado>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistrado> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoCurtaDuracao> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoCurtaDuracao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoCurtaDuracao> <http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistrado>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoLongaDuracao> (<http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoLongaDuracao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistradoLongaDuracao> <http://www.datalattes.com/ontologies/datalattes.owl#CursoMinistrado>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#DesenhoTecnico> (<http://www.datalattes.com/ontologies/datalattes.owl#DesenhoTecnico>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#DesenhoTecnico> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Diversas> (<http://www.datalattes.com/ontologies/datalattes.owl#Diversas>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Diversas> <http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Doutorado> (<http://www.datalattes.com/ontologies/datalattes.owl#Doutorado>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Doutorado> <http://www.datalattes.com/ontologies/datalattes.owl#StrictoSensu>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Editoracao> (<http://www.datalattes.com/ontologies/datalattes.owl#Editoracao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Editoracao> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoAnais> (<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoAnais>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoAnais> <http://www.datalattes.com/ontologies/datalattes.owl#Editoracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoCatalogo> (<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoCatalogo>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoCatalogo> <http://www.datalattes.com/ontologies/datalattes.owl#Editoracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoColetanea> (<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoColetanea>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoColetanea> <http://www.datalattes.com/ontologies/datalattes.owl#Editoracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoEnciclopedia> (<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoEnciclopedia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoEnciclopedia> <http://www.datalattes.com/ontologies/datalattes.owl#Editoracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoLivro> (<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoLivro>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoLivro> <http://www.datalattes.com/ontologies/datalattes.owl#Editoracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoPeriodico> (<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoPeriodico>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#EditoracaoPeriodico> <http://www.datalattes.com/ontologies/datalattes.owl#Editoracao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ElaboracaoProjeto> (<http://www.datalattes.com/ontologies/datalattes.owl#ElaboracaoProjeto>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ElaboracaoProjeto> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Engenharias> (<http://www.datalattes.com/ontologies/datalattes.owl#Engenharias>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Engenharias> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#EnsinoSuperior> (<http://www.datalattes.com/ontologies/datalattes.owl#EnsinoSuperior>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#EnsinoSuperior> <http://www.datalattes.com/ontologies/datalattes.owl#FormacaçãoAcademica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Entrevista> (<http://www.datalattes.com/ontologies/datalattes.owl#Entrevista>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Entrevista> <http://www.datalattes.com/ontologies/datalattes.owl#ProgramaRadioTV>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Equipamento> (<http://www.datalattes.com/ontologies/datalattes.owl#Equipamento>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Equipamento> <http://www.datalattes.com/ontologies/datalattes.owl#Prototipo>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Especializacao> (<http://www.datalattes.com/ontologies/datalattes.owl#Especializacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Especializacao> <http://www.datalattes.com/ontologies/datalattes.owl#LatoSensu>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#FarmacoSimilar> (<http://www.datalattes.com/ontologies/datalattes.owl#FarmacoSimilar>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#FarmacoSimilar> <http://www.datalattes.com/ontologies/datalattes.owl#Prototipo>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Forum> (<http://www.datalattes.com/ontologies/datalattes.owl#Forum>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Forum> <http://www.datalattes.com/ontologies/datalattes.owl#MidiaSocial>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Fotografia> (<http://www.datalattes.com/ontologies/datalattes.owl#Fotografia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Fotografia> <http://www.datalattes.com/ontologies/datalattes.owl#CartaMapa>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Graduacao> (<http://www.datalattes.com/ontologies/datalattes.owl#Graduacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Graduacao> <http://www.datalattes.com/ontologies/datalattes.owl#EnsinoSuperior>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#IniciacaoCientifica> (<http://www.datalattes.com/ontologies/datalattes.owl#IniciacaoCientifica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#IniciacaoCientifica> <http://www.datalattes.com/ontologies/datalattes.owl#EnsinoSuperior>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Instrumental> (<http://www.datalattes.com/ontologies/datalattes.owl#Instrumental>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Instrumental> <http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Instrumento> (<http://www.datalattes.com/ontologies/datalattes.owl#Instrumento>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Instrumento> <http://www.datalattes.com/ontologies/datalattes.owl#Prototipo>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Interpretacao> (<http://www.datalattes.com/ontologies/datalattes.owl#Interpretacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Interpretacao> <http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Introducao> (<http://www.datalattes.com/ontologies/datalattes.owl#Introducao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Introducao> <http://www.datalattes.com/ontologies/datalattes.owl#Livro>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Jornal> (<http://www.datalattes.com/ontologies/datalattes.owl#Jornal>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Jornal> <http://www.datalattes.com/ontologies/datalattes.owl#TextoMidias>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#LatoSensu> (<http://www.datalattes.com/ontologies/datalattes.owl#LatoSensu>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#LatoSensu> <http://www.datalattes.com/ontologies/datalattes.owl#Pos-graduacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#LiguisticaLetrasArtes> (<http://www.datalattes.com/ontologies/datalattes.owl#LiguisticaLetrasArtes>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#LiguisticaLetrasArtes> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Livro> (<http://www.datalattes.com/ontologies/datalattes.owl#Livro>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Livro> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoBibliografica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#LivroCompleto> (<http://www.datalattes.com/ontologies/datalattes.owl#LivroCompleto>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#LivroCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#Livro>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#LivroOrganizado> (<http://www.datalattes.com/ontologies/datalattes.owl#LivroOrganizado>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#LivroOrganizado> <http://www.datalattes.com/ontologies/datalattes.owl#Livro>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#MBA> (<http://www.datalattes.com/ontologies/datalattes.owl#MBA>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#MBA> <http://www.datalattes.com/ontologies/datalattes.owl#LatoSensu>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Mapa> (<http://www.datalattes.com/ontologies/datalattes.owl#Mapa>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Mapa> <http://www.datalattes.com/ontologies/datalattes.owl#CartaMapa>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Maquete> (<http://www.datalattes.com/ontologies/datalattes.owl#Maquete>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Maquete> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Marca> (<http://www.datalattes.com/ontologies/datalattes.owl#Marca>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Marca> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#MaterialDidatico> (<http://www.datalattes.com/ontologies/datalattes.owl#MaterialDidatico>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#MaterialDidatico> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#MesaRedonda> (<http://www.datalattes.com/ontologies/datalattes.owl#MesaRedonda>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#MesaRedonda> <http://www.datalattes.com/ontologies/datalattes.owl#ProgramaRadioTV>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Mestrado> (<http://www.datalattes.com/ontologies/datalattes.owl#Mestrado>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Mestrado> <http://www.datalattes.com/ontologies/datalattes.owl#StrictoSensu>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#MestradoAcademico> (<http://www.datalattes.com/ontologies/datalattes.owl#MestradoAcademico>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#MestradoAcademico> <http://www.datalattes.com/ontologies/datalattes.owl#Mestrado>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#MestradoProfissional> (<http://www.datalattes.com/ontologies/datalattes.owl#MestradoProfissional>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#MestradoProfissional> <http://www.datalattes.com/ontologies/datalattes.owl#Mestrado>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#MidiaSocial> (<http://www.datalattes.com/ontologies/datalattes.owl#MidiaSocial>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#MidiaSocial> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Montagem> (<http://www.datalattes.com/ontologies/datalattes.owl#Montagem>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Montagem> <http://www.datalattes.com/ontologies/datalattes.owl#OrganizacaoEvento>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Multimidia> (<http://www.datalattes.com/ontologies/datalattes.owl#Multimidia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Multimidia> <http://www.datalattes.com/ontologies/datalattes.owl#Software>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Museologia> (<http://www.datalattes.com/ontologies/datalattes.owl#Museologia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Museologia> <http://www.datalattes.com/ontologies/datalattes.owl#OrganizacaoEvento>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Musica> (<http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Musica> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisCinema> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisCinema>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisCinema> <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisDesenho> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisDesenho>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisDesenho> <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisEscultura> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisEscultura>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisEscultura> <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisFotografia> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisFotografia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisFotografia> <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisGravura> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisGravura>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisGravura> <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisInstalacao> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisInstalacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisInstalacao> <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisPintura> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisPintura>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisPintura> <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisTelevisao> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisTelevisao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisTelevisao> <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisVideo> (<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisVideo>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuaisVideo> <http://www.datalattes.com/ontologies/datalattes.owl#ObraArtesVisuais>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Organizacao> (<http://www.datalattes.com/ontologies/datalattes.owl#Organizacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Organizacao> <http://www.datalattes.com/ontologies/datalattes.owl#OrganizacaoEvento>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#OrganizacaoEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#OrganizacaoEvento>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#OrganizacaoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Parecer> (<http://www.datalattes.com/ontologies/datalattes.owl#Parecer>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Parecer> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Partitura> (<http://www.datalattes.com/ontologies/datalattes.owl#Partitura>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Partitura> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Patente> (<http://www.datalattes.com/ontologies/datalattes.owl#Patente>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Patente> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Pedagogica> (<http://www.datalattes.com/ontologies/datalattes.owl#Pedagogica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Pedagogica> <http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Piloto> (<http://www.datalattes.com/ontologies/datalattes.owl#Piloto>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Piloto> <http://www.datalattes.com/ontologies/datalattes.owl#ProdutoTecnilogico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Pos-doutorado> (<http://www.datalattes.com/ontologies/datalattes.owl#Pos-doutorado>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Pos-doutorado> <http://www.datalattes.com/ontologies/datalattes.owl#StrictoSensu>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Pos-graduacao> (<http://www.datalattes.com/ontologies/datalattes.owl#Pos-graduacao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Pos-graduacao> <http://www.datalattes.com/ontologies/datalattes.owl#EnsinoSuperior>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Posfacio> (<http://www.datalattes.com/ontologies/datalattes.owl#Posfacio>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Posfacio> <http://www.datalattes.com/ontologies/datalattes.owl#Livro>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Prefacio> (<http://www.datalattes.com/ontologies/datalattes.owl#Prefacio>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Prefacio> <http://www.datalattes.com/ontologies/datalattes.owl#Livro>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica> (<http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Processual> (<http://www.datalattes.com/ontologies/datalattes.owl#Processual>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Processual> <http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica> (<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica> <http://www.datalattes.com/ontologies/datalattes.owl#Producao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoBibliografica> (<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoBibliografica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoBibliografica> <http://www.datalattes.com/ontologies/datalattes.owl#Producao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica> (<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica> <http://www.datalattes.com/ontologies/datalattes.owl#Producao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ProdutoTecnilogico> (<http://www.datalattes.com/ontologies/datalattes.owl#ProdutoTecnilogico>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ProdutoTecnilogico> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Programa> (<http://www.datalattes.com/ontologies/datalattes.owl#Programa>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Programa> <http://www.datalattes.com/ontologies/datalattes.owl#ProgramaRadioTV>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ProgramaRadioTV> (<http://www.datalattes.com/ontologies/datalattes.owl#ProgramaRadioTV>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ProgramaRadioTV> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Projeto> (<http://www.datalattes.com/ontologies/datalattes.owl#Projeto>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Projeto> <http://www.datalattes.com/ontologies/datalattes.owl#ProdutoTecnilogico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Prototipo> (<http://www.datalattes.com/ontologies/datalattes.owl#Prototipo>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Prototipo> <http://www.datalattes.com/ontologies/datalattes.owl#ProdutoTecnilogico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#PublicacaoPartitura> (<http://www.datalattes.com/ontologies/datalattes.owl#PublicacaoPartitura>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#PublicacaoPartitura> <http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#RedeSocial> (<http://www.datalattes.com/ontologies/datalattes.owl#RedeSocial>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#RedeSocial> <http://www.datalattes.com/ontologies/datalattes.owl#MidiaSocial>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#RegistroFonografico> (<http://www.datalattes.com/ontologies/datalattes.owl#RegistroFonografico>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#RegistroFonografico> <http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#RelatorioPesquisa> (<http://www.datalattes.com/ontologies/datalattes.owl#RelatorioPesquisa>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#RelatorioPesquisa> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#RelatorioTecnico> (<http://www.datalattes.com/ontologies/datalattes.owl#RelatorioTecnico>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#RelatorioTecnico> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Revista> (<http://www.datalattes.com/ontologies/datalattes.owl#Revista>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Revista> <http://www.datalattes.com/ontologies/datalattes.owl#TextoMidias>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ServicoSaude> (<http://www.datalattes.com/ontologies/datalattes.owl#ServicoSaude>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ServicoSaude> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Software> (<http://www.datalattes.com/ontologies/datalattes.owl#Software>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Software> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Sonoplastia> (<http://www.datalattes.com/ontologies/datalattes.owl#Sonoplastia>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Sonoplastia> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaCinema> (<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaCinema>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaCinema> <http://www.datalattes.com/ontologies/datalattes.owl#Sonoplastia>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaMusica> (<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaMusica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaMusica> <http://www.datalattes.com/ontologies/datalattes.owl#Sonoplastia>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaRadio> (<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaRadio>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaRadio> <http://www.datalattes.com/ontologies/datalattes.owl#Sonoplastia>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaTeatro> (<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaTeatro>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaTeatro> <http://www.datalattes.com/ontologies/datalattes.owl#Sonoplastia>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaTelevisao> (<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaTelevisao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#SonoplastiaTelevisao> <http://www.datalattes.com/ontologies/datalattes.owl#Sonoplastia>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#StrictoSensu> (<http://www.datalattes.com/ontologies/datalattes.owl#StrictoSensu>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#StrictoSensu> <http://www.datalattes.com/ontologies/datalattes.owl#Pos-graduacao>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Terapeutica> (<http://www.datalattes.com/ontologies/datalattes.owl#Terapeutica>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Terapeutica> <http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#TextoMidias> (<http://www.datalattes.com/ontologies/datalattes.owl#TextoMidias>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#TextoMidias> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoBibliografica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#TopograficaCircuitoIntegrado> (<http://www.datalattes.com/ontologies/datalattes.owl#TopograficaCircuitoIntegrado>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#TopograficaCircuitoIntegrado> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico> (<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhosEventos> (<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhosEventos>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhosEventos> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoBibliografica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Traducao> (<http://www.datalattes.com/ontologies/datalattes.owl#Traducao>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Traducao> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoBibliografica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#TrilhaSonora> (<http://www.datalattes.com/ontologies/datalattes.owl#TrilhaSonora>)
+
+SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#TrilhaSonora> <http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
+
+
+DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoProjetoPesquisa") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t2>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t2>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>))))
+DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoOrientou") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#orientou> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#orientou> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>))))
+DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoBanca") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeBanca> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeBanca> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>))))
+DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoEvento") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>))))
+DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoAreaAtuacao") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>))))
+)

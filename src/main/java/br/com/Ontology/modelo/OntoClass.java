@@ -10,14 +10,14 @@ public class OntoClass {
 
 	public OntoClass(String titulo, String tipo, ArrayList<OntoParceiro> listAutores) {
 		super();
-		this.Titulo = titulo.replaceAll(" ", "_");
+		this.Titulo = titulo;
 		this.Tipo = tipo;
 		this.ListAutores = listAutores;
 	}
 
 	public OntoClass(String titulo, String tipo, int ano) {
 		super();
-		this.Titulo = titulo.replaceAll(" ", "_");
+		this.Titulo = titulo;
 		this.Tipo = tipo;
 		this.ListAutores = new ArrayList<>();
 		this.ano = ano;
@@ -28,9 +28,8 @@ public class OntoClass {
 	}
 
 	public void setTitulo(String titulo) {
-		this.Titulo = titulo.replaceAll(" ", "_");
+		this.Titulo = titulo;
 	}
-
 
 	public ArrayList<OntoParceiro> getListAutores() {
 		return this.ListAutores;

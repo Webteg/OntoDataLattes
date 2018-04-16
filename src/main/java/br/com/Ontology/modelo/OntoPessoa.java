@@ -17,7 +17,7 @@ public class OntoPessoa {
 
 	public OntoPessoa(String nomeCompleto, String idLattes, String data) {
 		super();
-		this.NomeCompleto = nomeCompleto.replaceAll(" ", "_");
+		this.NomeCompleto = nomeCompleto;
 		this.IdLattes = idLattes;
 		this.Data = data;
 	}
@@ -27,7 +27,7 @@ public class OntoPessoa {
 	}
 
 	public void setNomeCompleto(String nomeCompleto) {
-		this.NomeCompleto = nomeCompleto.replaceAll(" ", "_");
+		this.NomeCompleto = nomeCompleto;
 	}
 
 	public String getIdLattes() {

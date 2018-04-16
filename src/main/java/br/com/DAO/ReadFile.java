@@ -11,7 +11,7 @@ public class ReadFile {
 	public static File PegarFile() {
 		try {
 			File file = new ClassPathResource("static/OWL/datalattes.owl").getFile();
-			File ont = new File(System.getProperty("user.dir") + "/datalattescopy.owl");
+			File ont = new File(System.getProperty("user.dir") + "/datalattesFull.owl");
 			FileUtils.copyFile(file, ont);
 
 			return ont;

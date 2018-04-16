@@ -37,6 +37,7 @@ public class AnaliseController {
 	@RequestMapping("/uploadOnto")
 	public String uploadFileToOntology(@RequestParam("file") MultipartFile[] uploadingFiles) {
 		try {
+
 			for (MultipartFile uploadedFile : uploadingFiles) {
 				System.out.println(uploadedFile.getOriginalFilename());
 				File xmlfile = new File(uploadedFile.getOriginalFilename());
@@ -58,6 +59,7 @@ public class AnaliseController {
 			// xmlfile.createNewFile();
 			// this.preencherOntologia.inserirFile(xmlfile);
 			// xmlfile.delete();
+			System.out.println("fim");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

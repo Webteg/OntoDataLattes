@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 
 import javax.annotation.PreDestroy;
 
+import org.semanticweb.HermiT.ReasonerFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.formats.FunctionalSyntaxDocumentFormat;
 import org.semanticweb.owlapi.model.IRI;
@@ -21,6 +22,9 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.reasoner.InferenceType;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.springframework.stereotype.Service;
 
 import br.com.DAO.ReadFile;
@@ -59,50 +63,70 @@ public class OntologyDAO {
 
 	public void preencherOnto(OntoPessoa pessoa) throws OWLOntologyStorageException, FileNotFoundException {
 		String nome = pessoa.getIdLattes();
-
 		// Add dados gerais
 		addIndividual(nome, "Pessoa");
 		addAtribNoIndivido(nome, pessoa.getIdLattes(), "IdLattes");
 		addAtribNoIndivido(nome, pessoa.getNomeCompleto(), "NomeCompleto");
 		addAtribNoIndivido(nome, pessoa.getData(), "DataAtualizacao");
-		//// Add dados de projetos de pesquisa
-		// pessoa.getListOntoProjetoPesquisa().forEach(u -> {
-		// addIndividual(u.getTitulo(), u.getTipo());
-		// addRelacaoInd(nome, u.getTitulo(), "TrabalhoEmProjetoPesquisa");
-		// u.getListAutores().forEach(t -> {
-		// addIndividual((t.getId() == "") ? t.getNome() : t.getId(), "Pessoa");
-		// addRelacaoInd((t.getId() == "") ? t.getNome() : t.getId(), u.getTitulo(),
-		// "TrabalhoEmProjetoPesquisa");
-		// });
-		// });
-		//// Add dados de eventos
-		// pessoa.getListOntoEvento().forEach(u -> {
-		// addIndividual(u.getTitulo(), u.getTipo());
-		// addRelacaoInd(nome, u.getTitulo(), "participouEvento");
-		// });
-		// pessoa.getListOntoTrabalhoEvento().forEach(u -> {
-		// addIndividual(u.getTituloTrabalho(), "Producao");
-		// addIndividual(u.getEvento().getTitulo(), "Evento");
-		// addRelacaoInd(nome, u.getTituloTrabalho(), "apresentouTrabalhoEvento");
-		// addRelacaoInd(u.getTituloTrabalho(), u.getEvento().getTitulo(),
-		// "trabalhoEmEvento");
-		// });
-		//// Add dados de formacao
-		// pessoa.getListOntoFormacao().forEach(u -> {
-		// addIndividual(u.getTitulo(), u.getTipo());
-		// addRelacaoInd(nome, u.getTitulo(), "eFormado");
-		// u.getListAutores().forEach(t -> {
-		// addIndividual((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ?
-		// t.getNome() : t.getId(),
-		// "Pessoa");
-		// addRelacaoInd((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ?
-		// t.getNome() : t.getId(),
-		// nome, "orientou");
-		// });
-		// });
-
+		// Add dados de projetos de pesquisa
+		pessoa.getListOntoProjetoPesquisa().forEach(u -> {
+			addIndividual(u.getTitulo(), u.getTipo());
+			addRelacaoInd(nome, u.getTitulo(), "TrabalhoEmProjetoPesquisa");
+			u.getListAutores().forEach(t -> {
+				addIndividual((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
+						"Pessoa");
+				addRelacaoInd((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
+						u.getTitulo(), "TrabalhoEmProjetoPesquisa");
+			});
+		});
+		// // // Add dados de participacao eventos
+		pessoa.getListOntoEvento().forEach(u -> {
+			addIndividual(u.getTitulo(), u.getTipo());
+			addRelacaoInd(nome, u.getTitulo(), "participouEvento");
+		});
+		// // // Add dados de organizao de eventos
+		pessoa.getListOntoOrgEvento().forEach(u -> {
+			addIndividual(u.getTitulo(), u.getTipo());
+			addRelacaoInd(nome, u.getTitulo(), "organizouEvento");
+		});
+		// // //Add dados de formacao
+		pessoa.getListOntoFormacao().forEach(u -> {
+			addIndividual(u.getTitulo(), u.getTipo());
+			addRelacaoInd(nome, u.getTitulo(), "eFormado");
+			u.getListAutores().forEach(t -> {
+				addIndividual((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
+						"Pessoa");
+				addRelacaoInd((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
+						nome, "orientou");
+			});
+		});
+		// // // Add Banca
+		pessoa.getListOntoBanca().forEach(u -> {
+			addIndividual(u.getTitulo(), u.getTipo());
+			addRelacaoInd(nome, u.getTitulo(), "participouDeBanca");
+			u.getListAutores().forEach(t -> {
+				addIndividual((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
+						"Pessoa");
+				addRelacaoInd((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
+						u.getTitulo(), "participouDeBanca");
+			});
+		});
+		// Add dados de trabalhos em eventos
+	pessoa.getListOntoTrabalhoEvento().forEach(u->
+	{
+		addIndividual(u.getTituloTrabalho(), "Producao");
+		addIndividual(u.getEvento().getTitulo(), "Evento");
+		addRelacaoInd(nome, u.getTituloTrabalho(), "apresentouTrabalhoEvento");
+		addRelacaoInd(u.getTituloTrabalho(), u.getEvento().getTitulo(), "trabalhoEmEvento");
+		});
 		saveOntologyDAO();
 		// imprimir();
+	}
+
+	public void execReasoner() {
+		OWLReasonerFactory rf = new ReasonerFactory();
+		OWLReasoner r = rf.createReasoner(this.ontology);
+		r.precomputeInferences(InferenceType.CLASS_HIERARCHY);
 	}
 
 	public void addIndividual(String Nome, String Tipo) {

@@ -17,16 +17,21 @@ import br.com.Ontology.modelo.OntoClass;
 import br.com.Ontology.modelo.OntoParceiro;
 import br.com.Ontology.modelo.OntoPessoa;
 import br.com.Ontology.modelo.TrabalhoEvento;
+import br.com.converter.FixString;
 
 public class BuscarXmlToPessoa {
 	XPath xpath;
 	public Document xmlfile;
+	public FixString fixString;
 
 	public BuscarXmlToPessoa(Document xmlfile) {
 		XPathFactory xPathfactory = XPathFactory.newInstance();
 		this.xpath = xPathfactory.newXPath();
 		this.xmlfile = xmlfile;
+		this.fixString = new FixString();
 	}
+
+
 
 	public OntoPessoa buscarXML(OntoPessoa pessoa) throws XPathExpressionException {
 		pessoa.setListOntoAreaAtuacao(listOntoAreaAtuacao());
@@ -34,7 +39,7 @@ public class BuscarXmlToPessoa {
 		pessoa.setListOntoEvento(listOntoEvento());
 		pessoa.setListOntoOrgEvento(listOrganizacaoEvento());
 		pessoa.setListOntoFormacao(listOntoFormacao());
-		pessoa.setListOntoProducao(listOntoProducao());
+		// pessoa.setListOntoProducao(listOntoProducao());
 		pessoa.setListOntoProjetoPesquisa(listOntoProjetoPesquisa());
 		pessoa.setListOntoBanca(listOntoBanca());
 		return pessoa;
@@ -92,14 +97,13 @@ public class BuscarXmlToPessoa {
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
 			String tituloTrabalho = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-TRABALHO")
-					.getTextContent().replaceAll("\n", " ");
+					.getTextContent();
 			String tituloEvento = TipoNode.getChildNodes().item(1).getAttributes().getNamedItem("NOME-DO-EVENTO")
-					.getTextContent().replaceAll("\n", " ");
+					.getTextContent();
 			int ano = Integer.valueOf(
 					TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO-DO-TRABALHO").getTextContent());
-
-			OntoClass evento = new OntoClass(tituloEvento, "TrabalhoEmEvento", ano);
-			TrabalhoEvento item = new TrabalhoEvento(tituloTrabalho, evento);
+			OntoClass evento = new OntoClass(this.fixString.corrigirString(tituloEvento), "TrabalhoEmEvento", ano);
+			TrabalhoEvento item = new TrabalhoEvento(this.fixString.corrigirString(tituloTrabalho), evento);
 			listResult.add(item);
 		}
 		return listResult;
@@ -113,6 +117,35 @@ public class BuscarXmlToPessoa {
 		result.addAll(BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-EXAME-QUALIFICACAO", "BancaQualificacao"));
 		result.addAll(BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-APERFEICOAMENTO-ESPECIALIZACAO", "BancaAperEspe"));
 		return result;
+	}
+
+	public ArrayList<OntoClass> BuscaBanca(String raiz, String tipo) throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
+		ArrayList<OntoClass> ListArtigoCompleto = new ArrayList<>();
+		for (int i = 0; i < livros.getLength(); i++) {
+			Node TipoNode = livros.item(i);
+			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO").getTextContent();
+
+			NodeList listAutores = TipoNode.getChildNodes();
+			ArrayList<OntoParceiro> listParticipantes = new ArrayList<>();
+			for (int j = 0; j < listAutores.getLength(); j++) {
+				Node autoresNode = listAutores.item(j);
+				if (autoresNode.getNodeName().contentEquals("PARTICIPANTE-BANCA")) {
+					String nome = autoresNode.getAttributes().getNamedItem("NOME-COMPLETO-DO-PARTICIPANTE-DA-BANCA")
+							.getTextContent();
+					String citacao = autoresNode.getAttributes()
+							.getNamedItem("NOME-PARA-CITACAO-DO-PARTICIPANTE-DA-BANCA").getTextContent();
+					String id = autoresNode.getAttributes().getNamedItem("NRO-ID-CNPQ").getTextContent();
+					OntoParceiro ontopar = new OntoParceiro(this.fixString.corrigirString(nome),
+							this.fixString.corrigirString(citacao), this.fixString.corrigirString(id));
+					listParticipantes.add(ontopar);
+				}
+			}
+			OntoClass itemBanca = new OntoClass(this.fixString.corrigirString(titulo), tipo, listParticipantes);
+			ListArtigoCompleto.add(itemBanca);
+		}
+		return ListArtigoCompleto;
 	}
 
 	public ArrayList<OntoClass> listOntoFormacao() throws XPathExpressionException {
@@ -134,70 +167,6 @@ public class BuscarXmlToPessoa {
 		return result;
 	}
 
-	public ArrayList<OntoClass> listOrganizacaoEvento() throws XPathExpressionException {
-		XPathExpression expr = this.xpath.compile("//ORGANIZACAO-DE-EVENTO");
-		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
-		ArrayList<OntoClass> listResult = new ArrayList<>();
-		for (int i = 0; i < livros.getLength(); i++) {
-			Node TipoNode = livros.item(i);
-			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO").getTextContent()
-					.replaceAll("\n", " ");
-			int ano = Integer
-					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
-
-			OntoClass eve = new OntoClass(titulo, "OrganizacaoEvento", ano);
-			listResult.add(eve);
-		}
-		return listResult;
-	}
-
-	public ArrayList<OntoClass> listOntoEvento() throws XPathExpressionException {
-		ArrayList<OntoClass> result = new ArrayList<>();
-		result.addAll(buscaEvento("//PARTICIPACAO-EM-CONGRESSO", "Congresso", 1, "NOME-DO-EVENTO"));
-		// não testado
-		result.addAll(buscaEvento("//PARTICIPACAO-EM-FEIRA", "Feira", 1, "NOME-DO-EVENTO"));
-		result.addAll(buscaEvento("//PARTICIPACAO-EM-SEMINARIO", "Seminario", 1, "NOME-DO-EVENTO"));
-		result.addAll(buscaEvento("//PARTICIPACAO-EM-SIMPOSIO", "Simposio", 1, "NOME-DO-EVENTO"));
-		result.addAll(buscaEvento("//PARTICIPACAO-EM-ENCONTRO", "Encontro", 1, "NOME-DO-EVENTO"));
-		// não testado
-		result.addAll(buscaEvento("//PARTICIPACAO-EM-EXPOSICAO", "Exposicao", 1, "NOME-DO-EVENTO"));
-		return result;
-	}
-
-	public ArrayList<AreaConhecimento> listOntoAreaAtuacao() throws XPathExpressionException {
-		XPathExpression expr = this.xpath.compile("//AREA-DE-ATUACAO");
-		NodeList listaxml = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
-		ArrayList<AreaConhecimento> listResult = new ArrayList<>();
-		for (int i = 0; i < listaxml.getLength(); i++) {
-			Node TipoNode = listaxml.item(i);
-			String areaConhecimento = TipoNode.getAttributes().getNamedItem("NOME-DA-AREA-DO-CONHECIMENTO")
-					.getTextContent();
-			String subAreaConhecimento = TipoNode.getAttributes().getNamedItem("NOME-DA-SUB-AREA-DO-CONHECIMENTO")
-					.getTextContent();
-			String nomeEspecialidade = TipoNode.getAttributes().getNamedItem("NOME-DA-ESPECIALIDADE").getTextContent();
-			listResult.add(new AreaConhecimento(areaConhecimento, subAreaConhecimento, nomeEspecialidade));
-		}
-		return listResult;
-	}
-
-	private ArrayList<OntoClass> buscaEvento(String raiz, String tipo, int NumTitulo, String Nometitulo)
-			throws XPathExpressionException {
-		XPathExpression expr = this.xpath.compile(raiz);
-		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
-		ArrayList<OntoClass> listResult = new ArrayList<>();
-		for (int i = 0; i < livros.getLength(); i++) {
-			Node TipoNode = livros.item(i);
-			String titulo = TipoNode.getChildNodes().item(NumTitulo).getAttributes().getNamedItem(Nometitulo)
-					.getTextContent().replaceAll("\n", " ");
-			int ano = Integer
-					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
-
-			OntoClass eve = new OntoClass(titulo, tipo, ano);
-			listResult.add(eve);
-		}
-		return listResult;
-	}
-
 	private ArrayList<OntoClass> buscaFormacao(String raiz, String tipo, int NumTitulo, String Nometitulo,
 			String NomeOrientador, String IdOrientador) throws XPathExpressionException {
 		XPathExpression expr = this.xpath.compile(raiz);
@@ -214,9 +183,10 @@ public class BuscarXmlToPessoa {
 				if (nomeOrientador.isEmpty() || nomeOrientador.contentEquals("") || nomeOrientador == null) {
 
 				} else {
-					OntoParceiro ontoOrientador = new OntoParceiro(nomeOrientador, idOrientador);
+					OntoParceiro ontoOrientador = new OntoParceiro(this.fixString.corrigirString(nomeOrientador),
+							this.fixString.corrigirString(idOrientador));
 					listAutores.add(ontoOrientador);
-					OntoClass eve = new OntoClass(titulo, tipo, listAutores);
+					OntoClass eve = new OntoClass(this.fixString.corrigirString(titulo), tipo, listAutores);
 					listResult.add(eve);
 				}
 
@@ -225,32 +195,67 @@ public class BuscarXmlToPessoa {
 		return listResult;
 	}
 
-	public ArrayList<OntoClass> BuscaBanca(String raiz, String tipo) throws XPathExpressionException {
-		XPathExpression expr = this.xpath.compile(raiz);
+	public ArrayList<OntoClass> listOrganizacaoEvento() throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile("//ORGANIZACAO-DE-EVENTO");
 		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
-		ArrayList<OntoClass> ListArtigoCompleto = new ArrayList<>();
+		ArrayList<OntoClass> listResult = new ArrayList<>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
 			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO").getTextContent();
+			int ano = Integer
+					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
 
-			NodeList listAutores = TipoNode.getChildNodes();
-			ArrayList<OntoParceiro> listParticipantes = new ArrayList<>();
-			for (int j = 0; j < listAutores.getLength(); j++) {
-				Node autoresNode = listAutores.item(j);
-				if (autoresNode.getNodeName().contentEquals("PARTICIPANTE-BANCA")) {
-					String nome = autoresNode.getAttributes().getNamedItem("NOME-COMPLETO-DO-PARTICIPANTE-DA-BANCA")
-							.getTextContent();
-					String citacao = autoresNode.getAttributes()
-							.getNamedItem("NOME-PARA-CITACAO-DO-PARTICIPANTE-DA-BANCA").getTextContent();
-					String id = autoresNode.getAttributes().getNamedItem("NRO-ID-CNPQ").getTextContent();
-					OntoParceiro ontopar = new OntoParceiro(nome, citacao, id);
-					listParticipantes.add(ontopar);
-				}
-			}
-			OntoClass itemBanca = new OntoClass(titulo, tipo, listParticipantes);
-			ListArtigoCompleto.add(itemBanca);
+			OntoClass eve = new OntoClass(this.fixString.corrigirString(titulo), "Evento", ano);
+			listResult.add(eve);
 		}
-		return ListArtigoCompleto;
+		return listResult;
+	}
+
+	public ArrayList<OntoClass> listOntoEvento() throws XPathExpressionException {
+		ArrayList<OntoClass> result = new ArrayList<>();
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-CONGRESSO", "Evento", 1, "NOME-DO-EVENTO"));
+		// não testado
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-FEIRA", "Evento", 1, "NOME-DO-EVENTO"));
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-SEMINARIO", "Evento", 1, "NOME-DO-EVENTO"));
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-SIMPOSIO", "Evento", 1, "NOME-DO-EVENTO"));
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-ENCONTRO", "Evento", 1, "NOME-DO-EVENTO"));
+		// não testado
+		result.addAll(buscaEvento("//PARTICIPACAO-EM-EXPOSICAO", "Evento", 1, "NOME-DO-EVENTO"));
+		return result;
+	}
+
+	private ArrayList<OntoClass> buscaEvento(String raiz, String tipo, int NumTitulo, String Nometitulo)
+			throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
+		ArrayList<OntoClass> listResult = new ArrayList<>();
+		for (int i = 0; i < livros.getLength(); i++) {
+			Node TipoNode = livros.item(i);
+			String titulo = TipoNode.getChildNodes().item(NumTitulo).getAttributes().getNamedItem(Nometitulo)
+					.getTextContent();
+			int ano = Integer
+					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
+
+			OntoClass eve = new OntoClass(this.fixString.corrigirString(titulo), tipo, ano);
+			listResult.add(eve);
+		}
+		return listResult;
+	}
+
+	public ArrayList<AreaConhecimento> listOntoAreaAtuacao() throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile("//AREA-DE-ATUACAO");
+		NodeList listaxml = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
+		ArrayList<AreaConhecimento> listResult = new ArrayList<>();
+		for (int i = 0; i < listaxml.getLength(); i++) {
+			Node TipoNode = listaxml.item(i);
+			String areaConhecimento = TipoNode.getAttributes().getNamedItem("NOME-DA-AREA-DO-CONHECIMENTO")
+					.getTextContent();
+			String subAreaConhecimento = TipoNode.getAttributes().getNamedItem("NOME-DA-SUB-AREA-DO-CONHECIMENTO")
+					.getTextContent();
+			String nomeEspecialidade = TipoNode.getAttributes().getNamedItem("NOME-DA-ESPECIALIDADE").getTextContent();
+			listResult.add(new AreaConhecimento(areaConhecimento, subAreaConhecimento, nomeEspecialidade));
+		}
+		return listResult;
 	}
 
 	public ArrayList<OntoClass> listOntoProjetoPesquisa() throws XPathExpressionException {
@@ -281,12 +286,14 @@ public class BuscarXmlToPessoa {
 											.getTextContent().replaceAll(" ", "_");
 									String nome = Autores.getAttributes().getNamedItem("NOME-COMPLETO").getTextContent()
 											.replaceAll(" ", "_");
-									listAutores.add(new OntoParceiro(nome, citacao, id));
+									listAutores.add(new OntoParceiro(this.fixString.corrigirString(nome),
+											this.fixString.corrigirString(citacao), this.fixString.corrigirString(id)));
 								}
 							}
 						}
 					}
-					OntoClass eve = new OntoClass(titulo, "ProjetoPesquisa", listAutores);
+					OntoClass eve = new OntoClass(this.fixString.corrigirString(titulo), "ProjetoPesquisa",
+							listAutores);
 					listResult.add(eve);
 				}
 

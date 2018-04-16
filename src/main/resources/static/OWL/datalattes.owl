@@ -25,9 +25,6 @@
         <Class IRI="#Cultivacao"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BancaAperfeicoamento"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#CursoMinistrado"/>
     </Declaration>
     <Declaration>
@@ -61,10 +58,13 @@
         <Class IRI="#Organizacao"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Feira"/>
+        <Class IRI="#BancaAperEspe"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Jornal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaGraduacao"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ArtesVisuaisInstalacao"/>
@@ -191,9 +191,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SonoplastiaTelevisao"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Simposio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Diversas"/>
@@ -406,9 +403,6 @@
         <Class IRI="#ArtesVisuaisDesenho"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Exposicao"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#FormacaçãoAcademica"/>
     </Declaration>
     <Declaration>
@@ -469,9 +463,6 @@
         <Class IRI="#Capitulo"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BancaGraducao"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Partitura"/>
     </Declaration>
     <Declaration>
@@ -523,10 +514,10 @@
         <Class IRI="#Forum"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#relacaoEvento"/>
+        <Class IRI="#ProducaoTecnica"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ProducaoTecnica"/>
+        <ObjectProperty IRI="#relacaoEvento"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#relacaoAreaAtuacao"/>
@@ -539,9 +530,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#StrictoSensu"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Encontro"/>
     </Declaration>
     <Declaration>
         <Class IRI="#LatoSensu"/>
@@ -628,9 +616,6 @@
         <Class IRI="#ServicoSaude"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Congresso"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#ProducaoBibliografica"/>
     </Declaration>
     <Declaration>
@@ -662,9 +647,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#EnsinoSuperior"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Seminario"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MBA"/>
@@ -861,7 +843,7 @@
         <Class IRI="#TrabalhoTecnico"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#BancaAperfeicoamento"/>
+        <Class IRI="#BancaAperEspe"/>
         <Class IRI="#Banca"/>
     </SubClassOf>
     <SubClassOf>
@@ -869,7 +851,7 @@
         <Class IRI="#Banca"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#BancaGraducao"/>
+        <Class IRI="#BancaGraduacao"/>
         <Class IRI="#Banca"/>
     </SubClassOf>
     <SubClassOf>
@@ -935,10 +917,6 @@
     <SubClassOf>
         <Class IRI="#Computacional"/>
         <Class IRI="#Software"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Congresso"/>
-        <Class IRI="#Evento"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Consultoria"/>
@@ -1045,10 +1023,6 @@
         <Class IRI="#TrabalhoTecnico"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Encontro"/>
-        <Class IRI="#Evento"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Engenharias"/>
         <Class IRI="#AreaAtuacao"/>
     </SubClassOf>
@@ -1069,16 +1043,8 @@
         <Class IRI="#LatoSensu"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Exposicao"/>
-        <Class IRI="#Evento"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#FarmacoSimilar"/>
         <Class IRI="#Prototipo"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Feira"/>
-        <Class IRI="#Evento"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Forum"/>
@@ -1341,16 +1307,8 @@
         <Class IRI="#TextoMidias"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Seminario"/>
-        <Class IRI="#Evento"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#ServicoSaude"/>
         <Class IRI="#TrabalhoTecnico"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Simposio"/>
-        <Class IRI="#Evento"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Software"/>
