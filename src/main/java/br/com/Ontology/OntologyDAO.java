@@ -15,6 +15,7 @@ import org.semanticweb.owlapi.model.OWLClassAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLDataPropertyAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLDifferentIndividualsAxiom;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
@@ -132,9 +133,11 @@ public class OntologyDAO {
 	public void addIndividual(String Nome, String Tipo) {
 		OWLDataFactory factory = this.manager.getOWLDataFactory();
 		OWLIndividual nome = factory.getOWLNamedIndividual(this.DATALATTESIRI + "#", Nome);
+		OWLDifferentIndividualsAxiom diffInd = factory.getOWLDifferentIndividualsAxiom(nome);
 		OWLClass personClass = factory.getOWLClass(this.DATALATTESIRI + "#", Tipo);
 		OWLClassAssertionAxiom da = factory.getOWLClassAssertionAxiom(personClass, nome);
 		this.ontology.add(da);
+		this.ontology.add(diffInd);
 	}
 
 	public void addAtribNoIndivido(String Nome, String valor, String Tipo) {
