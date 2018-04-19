@@ -58,10 +58,10 @@
         <Class IRI="#Organizacao"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BancaAperEspe"/>
+        <Class IRI="#Jornal"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Jornal"/>
+        <Class IRI="#BancaAperEspe"/>
     </Declaration>
     <Declaration>
         <Class IRI="#BancaGraduacao"/>
@@ -95,6 +95,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#TopograficaCircuitoIntegrado"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dad"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#ProjetoTeveParticipante"/>
@@ -598,10 +601,10 @@
         <Class IRI="#LivroCompleto"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ArranjoMusical"/>
+        <Class IRI="#Fotografia"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Fotografia"/>
+        <Class IRI="#ArranjoMusical"/>
     </Declaration>
     <Declaration>
         <Class IRI="#CienciasExatasTerra"/>
@@ -1702,6 +1705,90 @@
                 <ObjectProperty IRI="#relacaoProjetoPesquisa"/>
                 <Variable IRI="#x"/>
                 <Variable IRI="#w"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Def-relacaoTrabalhoEventoOrg</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#apresentouTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#t1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#trabalhoEmEvento"/>
+                <Variable IRI="#t1"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#eventoTemOrganizacao"/>
+                <Variable IRI="#y"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#relacaoTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Def-relacaoTrabalhoEventoPar</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#apresentouTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#t1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#trabalhoEmEvento"/>
+                <Variable IRI="#t1"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#eventoTemParticipante"/>
+                <Variable IRI="#y"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#relacaoTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>

@@ -22,4 +22,17 @@ public class ReadFile {
 		return null;
 	}
 
+	public static File PegarFile(String NomeArq) {
+		try {
+			File file = new ClassPathResource("static/OWL/datalattes.owl").getFile();
+			File ont = new File(System.getProperty("user.dir") + "/" + NomeArq);
+			FileUtils.copyFile(file, ont);
+			return ont;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }
