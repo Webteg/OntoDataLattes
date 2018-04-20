@@ -30,67 +30,77 @@ import br.com.Ontology.BuscarXmlToPessoa;
 import br.com.Ontology.OntologyDAO;
 import br.com.Ontology.modelo.OntoPessoa;
 import br.com.converter.ConverterFile;
-import br.com.converter.FixString;
+import br.com.converter.TratamentoDeDados;
 
 public class ReasonTeste {
-	@Test
-	public void DadosGerais() throws Exception {
-		// System.out.println("Funcional");
-		// long tempoInicio = System.currentTimeMillis();
-		// OWLOntologyManager manager;
-		// OWLOntology ontology;
-		// IRI DATALATTESIRI =
-		// IRI.create("http://www.datalattes.com/ontologies/datalattes.owl");
-		// File owlfile = new
-		// ClassPathResource("static/OWL/datalattesSimples.owl").getFile();
-		// manager = OWLManager.createOWLOntologyManager();
-		// ontology = manager.loadOntologyFromOntologyDocument(owlfile);
-		// OWLDataFactory factory = manager.getOWLDataFactory();
-		// ontology.classesInSignature().forEach(cls ->
-		// System.out.println(cls.getIRI().getFragment()));
-		// ontology.logicalAxioms().forEach(System.out::println);
-		// ontology.objectPropertiesInSignature().forEach(System.out::println);
-		// OWLObjectProperty obj = factory.getOWLObjectProperty(DATALATTESIRI + "#",
-		// "orientou");
-		// ontology.objectPropertiesInSignature().forEach(System.out::println);
-		// ontology.classesInSignature().forEach(u ->
-		// System.out.println(u.getIRI()));
-		// ontology.objectPropertiesInSignature().forEach(u -> System.out.println(u.));
 
-		// ontology.signature().forEach(System.out::println);
-		// ontology.signature().filter(e ->
-		// !e.isBuiltIn() && e.getIRI().getRemainder().orElse("").startsWith("r")
-		// ).forEach(System.out::println);
-		// OWLObjectProperty obj = factory.getOWLObjectProperty(DATALATTESIRI + "#",
-		// "relacaoBanca");
-		// Logger LOG = LoggerFactory.getLogger(ReasonTeste.class);
-		// ReasonerProgressMonitor progressMonitor = new
-		// LoggingReasonerProgressMonitor(LOG, "Loginference");
-		// OWLReasonerConfiguration config = new SimpleConfiguration(progressMonitor);
-		// OWLReasonerFactory rf = new ReasonerFactory();
-		// OWLReasoner r = rf.createReasoner(ontology, config);
-		// r.precomputeInferences(InferenceType.CLASS_HIERARCHY,
-		// InferenceType.CLASS_ASSERTIONS,
-		//
-		// InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-		// // r.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-		// // r.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-		// r.getObjectPropertyDomains(obj).forEach(System.out::println);
-		// System.out.println("Tempo Total: " + (System.currentTimeMillis() -
-		// tempoInicio));
-		//
-		// ontology.classesInSignature().forEach(u -> {
-		// // System.out.println(u.getIRI());
-		//
-		// NodeSet<OWLClass> instances = r.getObjectPropertyDomains(obj);
-		// // NodeSet<OWLNamedIndividual> instances = r.getInstances(u,true);
-		// instances.entities().forEach(i -> {
-		// // System.out.println(i.getIRI());
-		// });
-		// });
-
-	}
-
+	/*
+	 * @Test public void limparDados() throws Exception {
+	 * System.out.println("Evento"); OWLOntologyManager manager; OWLOntology
+	 * ontology; IRI DATALATTESIRI =
+	 * IRI.create("http://www.datalattes.com/ontologies/datalattes.owl"); String
+	 * nomeFile = "Evento.owl"; OntologyDAO ontoDao = new OntologyDAO(nomeFile);
+	 * TratamentoDeDados tratamentoDeDados = new TratamentoDeDados();
+	 * ArrayList<String> Namexml = new ArrayList<>();
+	 * Namexml.add("Alessandreiacurriculo.xml"); Namexml.add("Alexcurriculo.xml");
+	 * Namexml.add("AndreLuizcurriculo.xml");
+	 * Namexml.add("BernardoMartinscurriculo.xml");
+	 * Namexml.add("Carloscurriculo.xml"); Namexml.add("Cirocurriculo.xml");
+	 * Namexml.add("Edelbertocurriculo.xml");
+	 * Namexml.add("EdmarOliveiracurriculo.xml");
+	 * Namexml.add("EduardoBarrelecurriculo.xml");
+	 * Namexml.add("EduardoPaganicurriculo.xml");
+	 * Namexml.add("FabricioMartinscurriculo.xml");
+	 * Namexml.add("Fernandacurriculo.xml"); Namexml.add("Gleiphcurriculo.xml");
+	 * Namexml.add("Hedercurriculo.xml"); for (String string : Namexml) { File
+	 * owlfile = new ClassPathResource("static/testFile/" + string).getFile();
+	 * Document xmlfile = ConverterFile.ConverterFileToDocument(owlfile);
+	 * BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(xmlfile);
+	 * OntoPessoa pessoa = new
+	 * OntoPessoa(tratamentoDeDados.corrigirString(preencherXMLtoOnto.NomeCompleto()
+	 * ), tratamentoDeDados.corrigirString(preencherXMLtoOnto.IDLattes()),
+	 * tratamentoDeDados.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
+	 * preencherXMLtoOnto.buscarXML(pessoa); ontoDao.preencherDadosGerais(pessoa);
+	 * ontoDao.preencherEvento(pessoa); ontoDao.preencherOrgEvento(pessoa);
+	 * ontoDao.saveOntologyDAO(new FunctionalSyntaxDocumentFormat()); }
+	 * 
+	 * long tempoInicio = System.currentTimeMillis(); File owlfile = new
+	 * File(System.getProperty("user.dir") + "/" + nomeFile); manager =
+	 * OWLManager.createOWLOntologyManager(); ontology =
+	 * manager.loadOntologyFromOntologyDocument(owlfile); OWLDataFactory factory =
+	 * manager.getOWLDataFactory(); OWLClass cls = factory.getOWLClass(DATALATTESIRI
+	 * + "#", "Evento"); ArrayList<TriplaOwl> listDelete = new ArrayList<>();
+	 * ontology.individualsInSignature().filter(u -> u.isOWLNamedIndividual())
+	 * .forEach(t -> System.out.println(t.getIRI()));
+	 * 
+	 * // ontology.individualsInSignature().filter(u -> u.isOWLNamedIndividual()) //
+	 * .filter(u -> //
+	 * ontology.classAssertionAxioms(u).findFirst().get().signature().findFirst().
+	 * get().getIRI() // .getFragment().contains("Evento")) // .forEach(w -> { // if
+	 * (ontology.objectPropertyAssertionAxioms(w).count() == 1) { // TriplaOwl
+	 * triplaOwl = new TriplaOwl(w.getIRI()); // listDelete.add(triplaOwl); // } //
+	 * }); // for (TriplaOwl triplaOwl : listDelete) { //
+	 * ontoDao.removeIndividual(triplaOwl.getSujeito()); // } //
+	 * ontoDao.saveOntologyDAO(new FunctionalSyntaxDocumentFormat());
+	 * 
+	 * 
+	 * // Logger LOG = LoggerFactory.getLogger(ReasonTeste.class); //
+	 * ReasonerProgressMonitor progressMonitor = new //
+	 * LoggingReasonerProgressMonitor(LOG, "Loginference"); //
+	 * OWLReasonerConfiguration config = new SimpleConfiguration(progressMonitor);
+	 * // OWLReasonerFactory rf = new ReasonerFactory(); // OWLReasoner r =
+	 * rf.createReasoner(ontology, config); //
+	 * r.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS); //
+	 * OWLObjectProperty obj = factory.getOWLObjectProperty(DATALATTESIRI + "#", //
+	 * "relacaoEvento"); // OWLClass ce = factory.getOWLClass(DATALATTESIRI + "#",
+	 * "Pessoa"); // r.getInstances(ce).forEach(u -> u.entities().forEach(i -> { //
+	 * if (r.objectPropertyValues(i, obj).count() >= 1) { //
+	 * System.out.println("@@@@@@" + i.getIRI().getFragment() + "@@@@@"); //
+	 * r.objectPropertyValues(i, obj).forEach(y -> { //
+	 * System.out.println(y.getIRI().getFragment()); // }); // } // }));
+	 * System.out.println("Tempo Total: " + (System.currentTimeMillis() -
+	 * tempoInicio)); }
+	 */
 	@Test
 	public void TesteProjetoPesquisa() throws Exception {
 		// FuncTesteProjetoPesquisa();
@@ -108,17 +118,27 @@ public class ReasonTeste {
 
 	@Test
 	public void TestetrabalhoEvento() throws Exception {
-		FuncTestetrabalhoEvento();
+		// FuncTestetrabalhoEvento();
 	}
 
-	public void FuncTestetrabalhoEvento() throws Exception {
-		System.out.println("TrabalhoEvento");
+	@Test
+	public void TesteEvento() throws Exception {
+		// FuncTesteEvento();
+	}
+
+	@Test
+	public void TesteTudoSimples() throws Exception {
+		FuncTesteTudoSimples();
+	}
+
+	public void FuncTesteTudoSimples() throws Exception {
+		System.out.println("TudoSimples");
 		OWLOntologyManager manager;
 		OWLOntology ontology;
 		IRI DATALATTESIRI = IRI.create("http://www.datalattes.com/ontologies/datalattes.owl");
 		String nomeFile = "Evento.owl";
 		OntologyDAO ontoDao = new OntologyDAO(nomeFile);
-		FixString fixString = new FixString();
+		TratamentoDeDados tratamentoDeDados = new TratamentoDeDados();
 		ArrayList<String> Namexml = new ArrayList<>();
 		Namexml.add("Alessandreiacurriculo.xml");
 		Namexml.add("Alexcurriculo.xml");
@@ -138,16 +158,146 @@ public class ReasonTeste {
 			File owlfile = new ClassPathResource("static/testFile/" + string).getFile();
 			Document xmlfile = ConverterFile.ConverterFileToDocument(owlfile);
 			BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(xmlfile);
-			OntoPessoa pessoa = new OntoPessoa(fixString.corrigirString(preencherXMLtoOnto.NomeCompleto()),
-					fixString.corrigirString(preencherXMLtoOnto.IDLattes()),
-					fixString.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
+			OntoPessoa pessoa = new OntoPessoa(tratamentoDeDados.corrigirString(preencherXMLtoOnto.NomeCompleto()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.IDLattes()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
+			preencherXMLtoOnto.buscarXML(pessoa);
+			ontoDao.preencherDadosGerais(pessoa);
+			ontoDao.preencherProjetoPesquisa(pessoa);
+			// ontoDao.preencherEvento(pessoa);
+			// ontoDao.preencherOrgEvento(pessoa);
+			// ontoDao.preencherFormacao(pessoa);
+			// ontoDao.preencherBanca(pessoa);
+			ontoDao.preencherTrabalhoEvento(pessoa);
+			ontoDao.saveOntologyDAO();
+			System.out.println(string);
+		}
+		ontoDao.Inferir();
+		ontoDao.saveOntologyDAO();
+		// long tempoInicio = System.currentTimeMillis();
+		// File owlfile = new File(System.getProperty("user.dir") + "/" + nomeFile);
+		// manager = OWLManager.createOWLOntologyManager();
+		// ontology = manager.loadOntologyFromOntologyDocument(owlfile);
+		// OWLDataFactory factory = manager.getOWLDataFactory();
+		// Logger LOG = LoggerFactory.getLogger(ReasonTeste.class);
+		// ReasonerProgressMonitor progressMonitor = new
+		// LoggingReasonerProgressMonitor(LOG, "Loginference");
+		// OWLReasonerConfiguration config = new SimpleConfiguration(progressMonitor);
+		// OWLReasonerFactory rf = new ReasonerFactory();
+		// OWLReasoner r = rf.createReasoner(ontology, config);
+		// r.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+		// OWLObjectProperty obj = factory.getOWLObjectProperty(DATALATTESIRI + "#",
+		// "relacaoEvento");
+		// OWLClass ce = factory.getOWLClass(DATALATTESIRI + "#", "Pessoa");
+		// r.getInstances(ce).forEach(u -> u.entities().forEach(i -> {
+		// System.out.println(i.getIRI());
+		// }));
+		//
+		//
+		// System.out.println("Tempo Total: " + (System.currentTimeMillis() -
+		// tempoInicio));
+	}
+
+	public void FuncTesteEvento() throws Exception {
+		System.out.println("Evento");
+		OWLOntologyManager manager;
+		OWLOntology ontology;
+		IRI DATALATTESIRI = IRI.create("http://www.datalattes.com/ontologies/datalattes.owl");
+		String nomeFile = "Evento.owl";
+		OntologyDAO ontoDao = new OntologyDAO(nomeFile);
+		TratamentoDeDados tratamentoDeDados = new TratamentoDeDados();
+		ArrayList<String> Namexml = new ArrayList<>();
+		Namexml.add("Alessandreiacurriculo.xml");
+		Namexml.add("Alexcurriculo.xml");
+		Namexml.add("AndreLuizcurriculo.xml");
+		Namexml.add("BernardoMartinscurriculo.xml");
+		Namexml.add("Carloscurriculo.xml");
+		Namexml.add("Cirocurriculo.xml");
+		Namexml.add("Edelbertocurriculo.xml");
+		Namexml.add("EdmarOliveiracurriculo.xml");
+		Namexml.add("EduardoBarrelecurriculo.xml");
+		Namexml.add("EduardoPaganicurriculo.xml");
+		Namexml.add("FabricioMartinscurriculo.xml");
+		Namexml.add("Fernandacurriculo.xml");
+		Namexml.add("Gleiphcurriculo.xml");
+		Namexml.add("Hedercurriculo.xml");
+		for (String string : Namexml) {
+			File owlfile = new ClassPathResource("static/testFile/" + string).getFile();
+			Document xmlfile = ConverterFile.ConverterFileToDocument(owlfile);
+			BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(xmlfile);
+			OntoPessoa pessoa = new OntoPessoa(tratamentoDeDados.corrigirString(preencherXMLtoOnto.NomeCompleto()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.IDLattes()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
+			preencherXMLtoOnto.buscarXML(pessoa);
+			ontoDao.preencherDadosGerais(pessoa);
+			ontoDao.preencherEvento(pessoa);
+			ontoDao.preencherOrgEvento(pessoa);
+			ontoDao.saveOntologyDAO(new FunctionalSyntaxDocumentFormat());
+		}
+
+		long tempoInicio = System.currentTimeMillis();
+		File owlfile = new File(System.getProperty("user.dir") + "/" + nomeFile);
+		manager = OWLManager.createOWLOntologyManager();
+		ontology = manager.loadOntologyFromOntologyDocument(owlfile);
+		OWLDataFactory factory = manager.getOWLDataFactory();
+		Logger LOG = LoggerFactory.getLogger(ReasonTeste.class);
+		ReasonerProgressMonitor progressMonitor = new LoggingReasonerProgressMonitor(LOG, "Loginference");
+		OWLReasonerConfiguration config = new SimpleConfiguration(progressMonitor);
+		OWLReasonerFactory rf = new ReasonerFactory();
+		OWLReasoner r = rf.createReasoner(ontology, config);
+		r.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+		OWLObjectProperty obj = factory.getOWLObjectProperty(DATALATTESIRI + "#", "relacaoEvento");
+		OWLClass ce = factory.getOWLClass(DATALATTESIRI + "#", "Pessoa");
+		r.getInstances(ce).forEach(u -> u.entities().forEach(i -> {
+			if (r.objectPropertyValues(i, obj).count() >= 1) {
+				System.out.println("@@@@@@" + i.getIRI().getFragment() + "@@@@@");
+				r.objectPropertyValues(i, obj).forEach(y -> {
+					System.out.println(y.getIRI().getFragment());
+				});
+			}
+		}));
+		System.out.println("Tempo Total: " + (System.currentTimeMillis() - tempoInicio));
+	}
+
+	public void FuncTestetrabalhoEvento() throws Exception {
+		System.out.println("TrabalhoEvento");
+		OWLOntologyManager manager;
+		OWLOntology ontology;
+		IRI DATALATTESIRI = IRI.create("http://www.datalattes.com/ontologies/datalattes.owl");
+		String nomeFile = "TrabalhoEvento.owl";
+		OntologyDAO ontoDao = new OntologyDAO(nomeFile);
+		TratamentoDeDados tratamentoDeDados = new TratamentoDeDados();
+		ArrayList<String> Namexml = new ArrayList<>();
+		Namexml.add("Alessandreiacurriculo.xml");
+		Namexml.add("Alexcurriculo.xml");
+		Namexml.add("AndreLuizcurriculo.xml");
+		Namexml.add("BernardoMartinscurriculo.xml");
+		Namexml.add("Carloscurriculo.xml");
+		Namexml.add("Cirocurriculo.xml");
+		Namexml.add("Edelbertocurriculo.xml");
+		Namexml.add("EdmarOliveiracurriculo.xml");
+		Namexml.add("EduardoBarrelecurriculo.xml");
+		Namexml.add("EduardoPaganicurriculo.xml");
+		Namexml.add("FabricioMartinscurriculo.xml");
+		Namexml.add("Fernandacurriculo.xml");
+		Namexml.add("Gleiphcurriculo.xml");
+		Namexml.add("Hedercurriculo.xml");
+		for (String string : Namexml) {
+			File owlfile = new ClassPathResource("static/testFile/" + string).getFile();
+			Document xmlfile = ConverterFile.ConverterFileToDocument(owlfile);
+			BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(xmlfile);
+			OntoPessoa pessoa = new OntoPessoa(tratamentoDeDados.corrigirString(preencherXMLtoOnto.NomeCompleto()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.IDLattes()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
 			preencherXMLtoOnto.buscarXML(pessoa);
 			ontoDao.preencherDadosGerais(pessoa);
 			ontoDao.preencherEvento(pessoa);
 			ontoDao.preencherOrgEvento(pessoa);
 			ontoDao.preencherTrabalhoEvento(pessoa);
 			ontoDao.saveOntologyDAO(new FunctionalSyntaxDocumentFormat());
+			System.out.println(string);
 		}
+
 		long tempoInicio = System.currentTimeMillis();
 		File owlfile = new File(System.getProperty("user.dir") + "/" + nomeFile);
 		manager = OWLManager.createOWLOntologyManager();
@@ -162,10 +312,12 @@ public class ReasonTeste {
 		OWLObjectProperty obj = factory.getOWLObjectProperty(DATALATTESIRI + "#", "relacaoTrabalhoEvento");
 		OWLClass ce = factory.getOWLClass(DATALATTESIRI + "#", "Pessoa");
 		r.getInstances(ce).forEach(u -> u.entities().forEach(i -> {
-			System.out.println("@@@@@@" + i.getIRI() + "@@@@@");
-			r.objectPropertyValues(i, obj).forEach(y -> {
-				System.out.println(y.getIRI());
-			});
+			if (r.objectPropertyValues(i, obj).count() >= 1) {
+				System.out.println("@@@@@@" + i.getIRI().getFragment() + "@@@@@");
+				r.objectPropertyValues(i, obj).forEach(y -> {
+					System.out.println(y.getIRI().getFragment());
+				});
+			}
 		}));
 		System.out.println("Tempo Total: " + (System.currentTimeMillis() - tempoInicio));
 	}
@@ -177,7 +329,7 @@ public class ReasonTeste {
 		IRI DATALATTESIRI = IRI.create("http://www.datalattes.com/ontologies/datalattes.owl");
 		String nomeFile = "Orientacao.owl";
 		OntologyDAO ontoDao = new OntologyDAO(nomeFile);
-		FixString fixString = new FixString();
+		TratamentoDeDados tratamentoDeDados = new TratamentoDeDados();
 		ArrayList<String> Namexml = new ArrayList<>();
 		Namexml.add("Alessandreiacurriculo.xml");
 		Namexml.add("Alexcurriculo.xml");
@@ -197,9 +349,9 @@ public class ReasonTeste {
 			File owlfile = new ClassPathResource("static/testFile/" + string).getFile();
 			Document xmlfile = ConverterFile.ConverterFileToDocument(owlfile);
 			BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(xmlfile);
-			OntoPessoa pessoa = new OntoPessoa(fixString.corrigirString(preencherXMLtoOnto.NomeCompleto()),
-					fixString.corrigirString(preencherXMLtoOnto.IDLattes()),
-					fixString.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
+			OntoPessoa pessoa = new OntoPessoa(tratamentoDeDados.corrigirString(preencherXMLtoOnto.NomeCompleto()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.IDLattes()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
 			preencherXMLtoOnto.buscarXML(pessoa);
 			ontoDao.preencherDadosGerais(pessoa);
 			ontoDao.preencherFormacao(pessoa);
@@ -220,10 +372,12 @@ public class ReasonTeste {
 		OWLClass ce = factory.getOWLClass(DATALATTESIRI + "#", "Pessoa");
 
 		r.getInstances(ce).forEach(u -> u.entities().forEach(i -> {
-			System.out.println("@@@@@@" + i.getIRI() + "@@@@@");
-			r.objectPropertyValues(i, obj).forEach(y -> {
-				System.out.println(y.getIRI());
-			});
+			if (r.objectPropertyValues(i, obj).count() >= 1) {
+				System.out.println("@@@@@@" + i.getIRI().getFragment() + "@@@@@");
+				r.objectPropertyValues(i, obj).forEach(y -> {
+					System.out.println(y.getIRI().getFragment());
+				});
+			}
 		}));
 		System.out.println("Tempo Total: " + (System.currentTimeMillis() - tempoInicio));
 	}
@@ -235,29 +389,29 @@ public class ReasonTeste {
 		IRI DATALATTESIRI = IRI.create("http://www.datalattes.com/ontologies/datalattes.owl");
 		String nomeFile = "Banca.owl";
 		OntologyDAO ontoDao = new OntologyDAO(nomeFile);
-		FixString fixString = new FixString();
+		TratamentoDeDados tratamentoDeDados = new TratamentoDeDados();
 		ArrayList<String> Namexml = new ArrayList<>();
 		Namexml.add("Alessandreiacurriculo.xml");
 		Namexml.add("Alexcurriculo.xml");
 		Namexml.add("AndreLuizcurriculo.xml");
 		Namexml.add("BernardoMartinscurriculo.xml");
-		Namexml.add("Carloscurriculo.xml");
-		Namexml.add("Cirocurriculo.xml");
-		Namexml.add("Edelbertocurriculo.xml");
-		Namexml.add("EdmarOliveiracurriculo.xml");
-		Namexml.add("EduardoBarrelecurriculo.xml");
-		Namexml.add("EduardoPaganicurriculo.xml");
-		Namexml.add("FabricioMartinscurriculo.xml");
-		Namexml.add("Fernandacurriculo.xml");
-		Namexml.add("Gleiphcurriculo.xml");
-		Namexml.add("Hedercurriculo.xml");
+		// Namexml.add("Carloscurriculo.xml");
+		// Namexml.add("Cirocurriculo.xml");
+		// Namexml.add("Edelbertocurriculo.xml");
+		// Namexml.add("EdmarOliveiracurriculo.xml");
+		// Namexml.add("EduardoBarrelecurriculo.xml");
+		// Namexml.add("EduardoPaganicurriculo.xml");
+		// Namexml.add("FabricioMartinscurriculo.xml");
+		// Namexml.add("Fernandacurriculo.xml");
+		// Namexml.add("Gleiphcurriculo.xml");
+		// Namexml.add("Hedercurriculo.xml");
 		for (String string : Namexml) {
 			File owlfile = new ClassPathResource("static/testFile/" + string).getFile();
 			Document xmlfile = ConverterFile.ConverterFileToDocument(owlfile);
 			BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(xmlfile);
-			OntoPessoa pessoa = new OntoPessoa(fixString.corrigirString(preencherXMLtoOnto.NomeCompleto()),
-					fixString.corrigirString(preencherXMLtoOnto.IDLattes()),
-					fixString.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
+			OntoPessoa pessoa = new OntoPessoa(tratamentoDeDados.corrigirString(preencherXMLtoOnto.NomeCompleto()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.IDLattes()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
 			preencherXMLtoOnto.buscarXML(pessoa);
 			ontoDao.preencherDadosGerais(pessoa);
 			ontoDao.preencherBanca(pessoa);
@@ -273,15 +427,17 @@ public class ReasonTeste {
 		OWLReasonerConfiguration config = new SimpleConfiguration(progressMonitor);
 		OWLReasonerFactory rf = new ReasonerFactory();
 		OWLReasoner r = rf.createReasoner(ontology, config);
-		r.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+		r.precomputeInferences(InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.OBJECT_PROPERTY_ASSERTIONS);
 		OWLObjectProperty obj = factory.getOWLObjectProperty(DATALATTESIRI + "#", "relacaoBanca");
 		OWLClass ce = factory.getOWLClass(DATALATTESIRI + "#", "Pessoa");
 
 		r.getInstances(ce).forEach(u -> u.entities().forEach(i -> {
-			System.out.println("@@@@@@" + i.getIRI() + "@@@@@");
-			r.objectPropertyValues(i, obj).forEach(y -> {
-				System.out.println(y.getIRI());
-			});
+			if (r.objectPropertyValues(i, obj).count() >= 1) {
+				System.out.println("@@@@@@" + i.getIRI().getFragment() + "@@@@@");
+				r.objectPropertyValues(i, obj).forEach(y -> {
+					System.out.println(y.getIRI().getFragment());
+				});
+			}
 		}));
 		System.out.println("Tempo Total: " + (System.currentTimeMillis() - tempoInicio));
 	}
@@ -293,7 +449,7 @@ public class ReasonTeste {
 		IRI DATALATTESIRI = IRI.create("http://www.datalattes.com/ontologies/datalattes.owl");
 		String nomeFile = "ProjetoPesquisa.owl";
 		OntologyDAO ontoDao = new OntologyDAO(nomeFile);
-		FixString fixString = new FixString();
+		TratamentoDeDados tratamentoDeDados = new TratamentoDeDados();
 		ArrayList<String> Namexml = new ArrayList<>();
 		Namexml.add("Alessandreiacurriculo.xml");
 		Namexml.add("Alexcurriculo.xml");
@@ -313,9 +469,9 @@ public class ReasonTeste {
 			File owlfile = new ClassPathResource("static/testFile/" + string).getFile();
 			Document xmlfile = ConverterFile.ConverterFileToDocument(owlfile);
 			BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(xmlfile);
-			OntoPessoa pessoa = new OntoPessoa(fixString.corrigirString(preencherXMLtoOnto.NomeCompleto()),
-					fixString.corrigirString(preencherXMLtoOnto.IDLattes()),
-					fixString.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
+			OntoPessoa pessoa = new OntoPessoa(tratamentoDeDados.corrigirString(preencherXMLtoOnto.NomeCompleto()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.IDLattes()),
+					tratamentoDeDados.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
 			preencherXMLtoOnto.buscarXML(pessoa);
 			ontoDao.preencherDadosGerais(pessoa);
 			ontoDao.preencherProjetoPesquisa(pessoa);
@@ -335,50 +491,16 @@ public class ReasonTeste {
 		OWLObjectProperty obj = factory.getOWLObjectProperty(DATALATTESIRI + "#", "relacaoProjetoPesquisa");
 		OWLClass ce = factory.getOWLClass(DATALATTESIRI + "#", "Pessoa");
 		r.getInstances(ce).forEach(u -> u.entities().forEach(i -> {
-			System.out.println("@@@@@@" + i.getIRI() + "@@@@@");
-			r.objectPropertyValues(i, obj).forEach(y -> {
-				System.out.println(y.getIRI());
-			});
+			if (r.objectPropertyValues(i, obj).count() >= 1) {
+				System.out.println("@@@@@@" + i.getIRI().getFragment() + "@@@@@");
+				r.objectPropertyValues(i, obj).forEach(y -> {
+					System.out.println(y.getIRI().getFragment());
+				});
+			}
 		}));
 		System.out.println("Tempo Total: " + (System.currentTimeMillis() - tempoInicio));
 	}
 
-	// @Test
-	// public void DadosGeraisRDF() throws Exception {
-	// System.out.println("RDF");
-	// long tempoInicio = System.currentTimeMillis();
-	// OWLOntologyManager manager;
-	// OWLOntology ontology;
-	// IRI DATALATTESIRI =
-	// IRI.create("http://www.datalattes.com/ontologies/datalattes.owl");
-	// File owlfile = new
-	// ClassPathResource("static/OWL/datalattesFullRDF.owl").getFile();
-	// manager = OWLManager.createOWLOntologyManager();
-	// ontology = manager.loadOntologyFromOntologyDocument(owlfile);
-	// OWLDataFactory factory = manager.getOWLDataFactory();
-	// // this.ontology.classesInSignature().forEach(cls ->
-	// // System.out.println(cls.getIRI().getFragment()));
-	// // ontology.logicalAxioms().forEach(System.out::println);
-	// // ontology.objectPropertiesInSignature().forEach(System.out::println);
-	// // OWLObjectProperty obj = factory.getOWLObjectProperty(DATALATTESIRI + "#",
-	// // "orientou");
-	//
-	// // ontology.signature().forEach(System.out::println);
-	// OWLReasonerFactory rf = new ReasonerFactory();
-	// OWLReasoner r = rf.createReasoner(ontology);
-	// r.precomputeInferences(InferenceType.CLASS_HIERARCHY);
-	// System.out.println("Tempo Total: " + (System.currentTimeMillis() -
-	// tempoInicio));
-	// // ontology.classesInSignature().forEach(u -> {
-	// // // System.out.println(u.getIRI());
-	// //
-	// // NodeSet<OWLClass> instances = r.getObjectPropertyDomains(obj);
-	// // // NodeSet<OWLNamedIndividual> instances = r.getInstances(u,true);
-	// // instances.entities().forEach(i -> {
-	// // // System.out.println(i.getIRI());
-	// // });
-	// // });
-	// }
 	public static class LoggingReasonerProgressMonitor implements ReasonerProgressMonitor {
 
 		private static final long serialVersionUID = 40000L;

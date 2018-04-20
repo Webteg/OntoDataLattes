@@ -12,7 +12,7 @@ import org.w3c.dom.Document;
 
 import br.com.Ontology.modelo.OntoPessoa;
 import br.com.converter.ConverterFile;
-import br.com.converter.FixString;
+import br.com.converter.TratamentoDeDados;
 
 @Service
 public class PreencherOntologia {
@@ -20,11 +20,11 @@ public class PreencherOntologia {
 	OntologyDAO ontologyDAO;
 	String NomeCurriculo;
 	Document xmlfile;
-	public FixString fixString;
+	public TratamentoDeDados tratamentoDeDados;
 
 	public void inserirFile(File xmlfile) {
 		this.xmlfile = ConverterFile.ConverterFileToDocument(xmlfile);
-		this.fixString = new FixString();
+		this.tratamentoDeDados = new TratamentoDeDados();
 		try {
 			inserirDadosGerais();
 		} catch (XPathExpressionException | OWLOntologyStorageException | FileNotFoundException e) {
@@ -37,9 +37,9 @@ public class PreencherOntologia {
 			throws XPathExpressionException, OWLOntologyStorageException, FileNotFoundException {
 		BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(this.xmlfile);
 		OntoPessoa pessoa = new OntoPessoa(
-				this.fixString.corrigirString(preencherXMLtoOnto.NomeCompleto()),
-				this.fixString.corrigirString(preencherXMLtoOnto.IDLattes()),
-				this.fixString.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
+				this.tratamentoDeDados.corrigirString(preencherXMLtoOnto.NomeCompleto()),
+				this.tratamentoDeDados.corrigirString(preencherXMLtoOnto.IDLattes()),
+				this.tratamentoDeDados.corrigirString(preencherXMLtoOnto.UltimaAtualizacao()));
 		preencherXMLtoOnto.buscarXML(pessoa);
 		// System.out.println(pessoa.toString());
 		this.ontologyDAO.preencherOnto(pessoa);

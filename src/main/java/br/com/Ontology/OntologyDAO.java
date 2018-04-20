@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 
 import javax.annotation.PreDestroy;
 
+import org.semanticweb.HermiT.ReasonerFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.formats.FunctionalSyntaxDocumentFormat;
 import org.semanticweb.owlapi.model.IRI;
@@ -17,16 +18,31 @@ import org.semanticweb.owlapi.model.OWLDataPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLDifferentIndividualsAxiom;
 import org.semanticweb.owlapi.model.OWLDocumentFormat;
 import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.reasoner.InferenceType;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.reasoner.OWLReasonerConfiguration;
+import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
+import org.semanticweb.owlapi.reasoner.ReasonerProgressMonitor;
+import org.semanticweb.owlapi.reasoner.SimpleConfiguration;
+import org.semanticweb.owlapi.util.InferredOntologyGenerator;
+import org.semanticweb.owlapi.util.OWLEntityRemover;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import br.com.DAO.ReadFile;
 import br.com.Ontology.modelo.OntoPessoa;
+import br.com.Ontology.modelo.TriplaOwl;
+import br.com.OntologyTeste.ReasonTeste;
+import br.com.OntologyTeste.ReasonTeste.LoggingReasonerProgressMonitor;
+import br.com.converter.TratamentoDeDados;
 
 @Service
 public class OntologyDAO {
@@ -55,12 +71,27 @@ public class OntologyDAO {
 	@PreDestroy
 	public void saveOntologyDAO() throws OWLOntologyStorageException, FileNotFoundException {
 		diferentIndividual();
+		limparDadosDesnecessario();
 		this.manager.saveOntology(this.ontology, new FunctionalSyntaxDocumentFormat(), new FileOutputStream(this.file));
 	}
 
 	public void saveOntologyDAO(OWLDocumentFormat formato) throws OWLOntologyStorageException, FileNotFoundException {
 		diferentIndividual();
+		limparDadosDesnecessario();
 		this.manager.saveOntology(this.ontology, formato, new FileOutputStream(this.file));
+	}
+
+	public void Inferir() {
+		OWLDataFactory factory = this.manager.getOWLDataFactory();
+		Logger LOG = LoggerFactory.getLogger(ReasonTeste.class);
+		ReasonerProgressMonitor progressMonitor = new LoggingReasonerProgressMonitor(LOG, "Loginference");
+		OWLReasonerConfiguration config = new SimpleConfiguration(progressMonitor);
+		OWLReasonerFactory rf = new ReasonerFactory();
+		OWLReasoner r = rf.createReasoner(this.ontology, config);
+		r.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+		r.flush();
+		InferredOntologyGenerator gen = new InferredOntologyGenerator(r);
+		gen.fillOntology(factory, this.ontology);
 	}
 
 
@@ -88,11 +119,12 @@ public class OntologyDAO {
 		pessoa.getListOntoProjetoPesquisa().forEach(u -> {
 			addIndividual(u.getTitulo(), u.getTipo());
 			addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "TrabalhoEmProjetoPesquisa");
+			addRelacaoInd(u.getTitulo(), pessoa.getIdLattes(), "ProjetoTeveParticipante");
 			u.getListAutores().forEach(t -> {
-				addIndividual((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
-						"Pessoa");
-				addRelacaoInd((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
-						u.getTitulo(), "TrabalhoEmProjetoPesquisa");
+				String nome = (t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId();
+				addIndividual(nome, "Pessoa");
+				addRelacaoInd(nome, u.getTitulo(), "TrabalhoEmProjetoPesquisa");
+				addRelacaoInd(u.getTitulo(), nome, "ProjetoTeveParticipante");
 			});
 		});
 	}
@@ -101,6 +133,7 @@ public class OntologyDAO {
 		pessoa.getListOntoEvento().forEach(u -> {
 			addIndividual(u.getTitulo(), u.getTipo());
 			addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "participouEvento");
+			addRelacaoInd(u.getTitulo(), pessoa.getIdLattes(), "eventoTemParticipante");
 		});
 	}
 
@@ -108,17 +141,19 @@ public class OntologyDAO {
 		pessoa.getListOntoOrgEvento().forEach(u -> {
 			addIndividual(u.getTitulo(), u.getTipo());
 			addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "organizouEvento");
+			addRelacaoInd(u.getTitulo(), pessoa.getIdLattes(), "eventoTemOrganizacao");
 		});
 	}
+
 	public void preencherFormacao(OntoPessoa pessoa) {
 		pessoa.getListOntoFormacao().forEach(u -> {
 			addIndividual(u.getTitulo(), u.getTipo());
 			addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "eFormado");
 			u.getListAutores().forEach(t -> {
-				addIndividual((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
-						"Pessoa");
-				addRelacaoInd((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
-						pessoa.getIdLattes(), "orientou");
+				String nome = (t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId();
+				addIndividual(nome, "Pessoa");
+				addRelacaoInd(nome, pessoa.getIdLattes(), "orientou");
+				addRelacaoInd(pessoa.getIdLattes(), nome, "foiOrientadoPor");
 			});
 		});
 	}
@@ -127,11 +162,18 @@ public class OntologyDAO {
 		pessoa.getListOntoBanca().forEach(u -> {
 			addIndividual(u.getTitulo(), u.getTipo());
 			addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "participouDeBanca");
+			addRelacaoInd(u.getTitulo(), pessoa.getIdLattes(), "bancaTemParticipante");
 			u.getListAutores().forEach(t -> {
-				addIndividual((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
-						"Pessoa");
-				addRelacaoInd((t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId(),
-						u.getTitulo(), "participouDeBanca");
+				String nome = (t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId();
+				addIndividual(nome, "Pessoa");
+				addRelacaoInd(nome, u.getTitulo(), "participouDeBanca");
+
+				addRelacaoInd(u.getTitulo(), nome, "bancaTemParticipante");
+				if (!pessoa.getIdLattes().contentEquals(nome)) {
+					addRelacaoInd(pessoa.getIdLattes(), nome, "relacaoBanca");
+					addRelacaoInd(nome, pessoa.getIdLattes(), "relacaoBanca");
+				}
+
 			});
 		});
 	}
@@ -141,9 +183,12 @@ public class OntologyDAO {
 			addIndividual(u.getTituloTrabalho(), "Producao");
 			addIndividual(u.getEvento().getTitulo(), "Evento");
 			addRelacaoInd(pessoa.getIdLattes(), u.getTituloTrabalho(), "apresentouTrabalhoEvento");
+			addRelacaoInd(u.getTituloTrabalho(), pessoa.getIdLattes(), "eventoTeveTrabalhoDe");
 			addRelacaoInd(u.getTituloTrabalho(), u.getEvento().getTitulo(), "trabalhoEmEvento");
+			addRelacaoInd(u.getEvento().getTitulo(), u.getTituloTrabalho(), "eventoTeveTrabalho");
 		});
 	}
+
 
 	public void diferentIndividual() {
 		OWLDataFactory factory = this.manager.getOWLDataFactory();
@@ -152,6 +197,19 @@ public class OntologyDAO {
 		this.ontology.add(diffInd);
 	}
 
+	public void limparDadosDesnecessario() {
+		for (TriplaOwl triplaOwl : TratamentoDeDados.listaObjetosDesnecessarios(this.ontology)) {
+			removeIndividual(triplaOwl.getSujeito());
+		}
+	}
+
+	public void removeIndividual(IRI objeto) {
+		OWLDataFactory factory = this.manager.getOWLDataFactory();
+		OWLNamedIndividual nome = factory.getOWLNamedIndividual(objeto);
+		OWLEntityRemover remover = new OWLEntityRemover(this.ontology);
+		remover.visit(nome);
+		this.manager.applyChanges(remover.getChanges());
+	}
 
 	public void addIndividual(String Nome, String Tipo) {
 		OWLDataFactory factory = this.manager.getOWLDataFactory();

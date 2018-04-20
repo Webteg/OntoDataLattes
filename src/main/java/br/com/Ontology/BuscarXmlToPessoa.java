@@ -17,18 +17,18 @@ import br.com.Ontology.modelo.OntoClass;
 import br.com.Ontology.modelo.OntoParceiro;
 import br.com.Ontology.modelo.OntoPessoa;
 import br.com.Ontology.modelo.TrabalhoEvento;
-import br.com.converter.FixString;
+import br.com.converter.TratamentoDeDados;
 
 public class BuscarXmlToPessoa {
 	XPath xpath;
 	public Document xmlfile;
-	public FixString fixString;
+	public TratamentoDeDados tratamentoDeDados;
 
 	public BuscarXmlToPessoa(Document xmlfile) {
 		XPathFactory xPathfactory = XPathFactory.newInstance();
 		this.xpath = xPathfactory.newXPath();
 		this.xmlfile = xmlfile;
-		this.fixString = new FixString();
+		this.tratamentoDeDados = new TratamentoDeDados();
 	}
 
 
@@ -102,8 +102,8 @@ public class BuscarXmlToPessoa {
 					.getTextContent();
 			int ano = Integer.valueOf(
 					TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO-DO-TRABALHO").getTextContent());
-			OntoClass evento = new OntoClass(this.fixString.corrigirString(tituloEvento), "TrabalhoEmEvento", ano);
-			TrabalhoEvento item = new TrabalhoEvento(this.fixString.corrigirString(tituloTrabalho), evento);
+			OntoClass evento = new OntoClass(this.tratamentoDeDados.corrigirString(tituloEvento), "TrabalhoEmEvento", ano);
+			TrabalhoEvento item = new TrabalhoEvento(this.tratamentoDeDados.corrigirString(tituloTrabalho), evento);
 			listResult.add(item);
 		}
 		return listResult;
@@ -137,12 +137,12 @@ public class BuscarXmlToPessoa {
 					String citacao = autoresNode.getAttributes()
 							.getNamedItem("NOME-PARA-CITACAO-DO-PARTICIPANTE-DA-BANCA").getTextContent();
 					String id = autoresNode.getAttributes().getNamedItem("NRO-ID-CNPQ").getTextContent();
-					OntoParceiro ontopar = new OntoParceiro(this.fixString.corrigirString(nome),
-							this.fixString.corrigirString(citacao), this.fixString.corrigirString(id));
+					OntoParceiro ontopar = new OntoParceiro(this.tratamentoDeDados.corrigirString(nome),
+							this.tratamentoDeDados.corrigirString(citacao), this.tratamentoDeDados.corrigirString(id));
 					listParticipantes.add(ontopar);
 				}
 			}
-			OntoClass itemBanca = new OntoClass(this.fixString.corrigirString(titulo), tipo, listParticipantes);
+			OntoClass itemBanca = new OntoClass(this.tratamentoDeDados.corrigirString(titulo), tipo, listParticipantes);
 			ListArtigoCompleto.add(itemBanca);
 		}
 		return ListArtigoCompleto;
@@ -183,10 +183,10 @@ public class BuscarXmlToPessoa {
 				if (nomeOrientador.isEmpty() || nomeOrientador.contentEquals("") || nomeOrientador == null) {
 
 				} else {
-					OntoParceiro ontoOrientador = new OntoParceiro(this.fixString.corrigirString(nomeOrientador),
-							this.fixString.corrigirString(idOrientador));
+					OntoParceiro ontoOrientador = new OntoParceiro(this.tratamentoDeDados.corrigirString(nomeOrientador),
+							this.tratamentoDeDados.corrigirString(idOrientador));
 					listAutores.add(ontoOrientador);
-					OntoClass eve = new OntoClass(this.fixString.corrigirString(titulo), tipo, listAutores);
+					OntoClass eve = new OntoClass(this.tratamentoDeDados.corrigirString(titulo), tipo, listAutores);
 					listResult.add(eve);
 				}
 
@@ -205,7 +205,7 @@ public class BuscarXmlToPessoa {
 			int ano = Integer
 					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
 
-			OntoClass eve = new OntoClass(this.fixString.corrigirString(titulo), "Evento", ano);
+			OntoClass eve = new OntoClass(this.tratamentoDeDados.corrigirString(titulo), "Evento", ano);
 			listResult.add(eve);
 		}
 		return listResult;
@@ -236,7 +236,7 @@ public class BuscarXmlToPessoa {
 			int ano = Integer
 					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
 
-			OntoClass eve = new OntoClass(this.fixString.corrigirString(titulo), tipo, ano);
+			OntoClass eve = new OntoClass(this.tratamentoDeDados.corrigirString(titulo), tipo, ano);
 			listResult.add(eve);
 		}
 		return listResult;
@@ -286,13 +286,13 @@ public class BuscarXmlToPessoa {
 											.getTextContent().replaceAll(" ", "_");
 									String nome = Autores.getAttributes().getNamedItem("NOME-COMPLETO").getTextContent()
 											.replaceAll(" ", "_");
-									listAutores.add(new OntoParceiro(this.fixString.corrigirString(nome),
-											this.fixString.corrigirString(citacao), this.fixString.corrigirString(id)));
+									listAutores.add(new OntoParceiro(this.tratamentoDeDados.corrigirString(nome),
+											this.tratamentoDeDados.corrigirString(citacao), this.tratamentoDeDados.corrigirString(id)));
 								}
 							}
 						}
 					}
-					OntoClass eve = new OntoClass(this.fixString.corrigirString(titulo), "ProjetoPesquisa",
+					OntoClass eve = new OntoClass(this.tratamentoDeDados.corrigirString(titulo), "ProjetoPesquisa",
 							listAutores);
 					listResult.add(eve);
 				}
