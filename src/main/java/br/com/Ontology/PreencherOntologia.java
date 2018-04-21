@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 
 import javax.xml.xpath.XPathExpressionException;
 
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,14 +28,16 @@ public class PreencherOntologia {
 		this.tratamentoDeDados = new TratamentoDeDados();
 		try {
 			inserirDadosGerais();
-		} catch (XPathExpressionException | OWLOntologyStorageException | FileNotFoundException e) {
+		} catch (XPathExpressionException | OWLOntologyStorageException | FileNotFoundException
+				| OWLOntologyCreationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	private void inserirDadosGerais()
-			throws XPathExpressionException, OWLOntologyStorageException, FileNotFoundException {
+			throws XPathExpressionException, OWLOntologyStorageException, FileNotFoundException,
+			OWLOntologyCreationException {
 		BuscarXmlToPessoa preencherXMLtoOnto = new BuscarXmlToPessoa(this.xmlfile);
 		OntoPessoa pessoa = new OntoPessoa(
 				this.tratamentoDeDados.corrigirString(preencherXMLtoOnto.NomeCompleto()),

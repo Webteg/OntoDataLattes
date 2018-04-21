@@ -1571,11 +1571,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#eventoTemOrganizacao"/>
-        <Class IRI="#Pessoa"/>
+        <Class IRI="#Evento"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#eventoTemParticipante"/>
-        <Class IRI="#Pessoa"/>
+        <Class IRI="#Evento"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#eventoTeveTrabalho"/>
@@ -1591,7 +1591,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#organizouEvento"/>
-        <Class IRI="#Evento"/>
+        <Class IRI="#Pessoa"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#orientou"/>
@@ -1607,7 +1607,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#participouEvento"/>
-        <Class IRI="#Evento"/>
+        <Class IRI="#Pessoa"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#relacaoAreaAtuacao"/>
@@ -1675,11 +1675,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#eventoTemOrganizacao"/>
-        <Class IRI="#Evento"/>
+        <Class IRI="#Pessoa"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#eventoTemParticipante"/>
-        <Class IRI="#Evento"/>
+        <Class IRI="#Pessoa"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#eventoTeveTrabalho"/>
@@ -1695,7 +1695,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#organizouEvento"/>
-        <Class IRI="#Pessoa"/>
+        <Class IRI="#Evento"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#orientou"/>
@@ -1711,7 +1711,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#participouEvento"/>
-        <Class IRI="#Pessoa"/>
+        <Class IRI="#Evento"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#relacaoAreaAtuacao"/>

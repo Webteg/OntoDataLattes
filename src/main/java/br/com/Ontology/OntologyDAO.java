@@ -3,6 +3,8 @@ package br.com.Ontology;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PreDestroy;
 
@@ -10,6 +12,7 @@ import org.semanticweb.HermiT.ReasonerFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.formats.FunctionalSyntaxDocumentFormat;
 import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLDataFactory;
@@ -31,7 +34,19 @@ import org.semanticweb.owlapi.reasoner.OWLReasonerConfiguration;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.reasoner.ReasonerProgressMonitor;
 import org.semanticweb.owlapi.reasoner.SimpleConfiguration;
+import org.semanticweb.owlapi.util.InferredAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredClassAssertionAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredDisjointClassesAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredEquivalentClassAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredEquivalentDataPropertiesAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredEquivalentObjectPropertyAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredInverseObjectPropertiesAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredObjectPropertyCharacteristicAxiomGenerator;
 import org.semanticweb.owlapi.util.InferredOntologyGenerator;
+import org.semanticweb.owlapi.util.InferredPropertyAssertionGenerator;
+import org.semanticweb.owlapi.util.InferredSubClassAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredSubDataPropertyAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredSubObjectPropertyAxiomGenerator;
 import org.semanticweb.owlapi.util.OWLEntityRemover;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,19 +84,34 @@ public class OntologyDAO {
 	}
 
 	@PreDestroy
-	public void saveOntologyDAO() throws OWLOntologyStorageException, FileNotFoundException {
-		diferentIndividual();
+	public void saveOntologyDAO()
+			throws OWLOntologyStorageException, FileNotFoundException, OWLOntologyCreationException {
 		limparDadosDesnecessario();
 		this.manager.saveOntology(this.ontology, new FunctionalSyntaxDocumentFormat(), new FileOutputStream(this.file));
+		diferentIndividual();
+		this.manager.saveOntology(this.ontology, new FunctionalSyntaxDocumentFormat(), new FileOutputStream(this.file));
+
 	}
 
-	public void saveOntologyDAO(OWLDocumentFormat formato) throws OWLOntologyStorageException, FileNotFoundException {
-		diferentIndividual();
+	public void saveOntologyDAO(OWLDocumentFormat formato)
+			throws OWLOntologyStorageException, FileNotFoundException, OWLOntologyCreationException {
 		limparDadosDesnecessario();
 		this.manager.saveOntology(this.ontology, formato, new FileOutputStream(this.file));
+		diferentIndividual();
+		this.manager.saveOntology(this.ontology, formato, new FileOutputStream(this.file));
+		Inferir();
 	}
 
-	public void Inferir() {
+	public void diferentIndividual() throws OWLOntologyCreationException {
+		this.manager = OWLManager.createOWLOntologyManager();
+		this.ontology = this.manager.loadOntologyFromOntologyDocument(this.file);
+		OWLDataFactory factory = this.manager.getOWLDataFactory();
+		OWLDifferentIndividualsAxiom diffInd = factory
+				.getOWLDifferentIndividualsAxiom(this.ontology.getIndividualsInSignature());
+		this.ontology.add(diffInd);
+	}
+
+	public void Inferir() throws OWLOntologyStorageException, FileNotFoundException, OWLOntologyCreationException {
 		OWLDataFactory factory = this.manager.getOWLDataFactory();
 		Logger LOG = LoggerFactory.getLogger(ReasonTeste.class);
 		ReasonerProgressMonitor progressMonitor = new LoggingReasonerProgressMonitor(LOG, "Loginference");
@@ -89,13 +119,43 @@ public class OntologyDAO {
 		OWLReasonerFactory rf = new ReasonerFactory();
 		OWLReasoner r = rf.createReasoner(this.ontology, config);
 		r.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-		r.flush();
-		InferredOntologyGenerator gen = new InferredOntologyGenerator(r);
-		gen.fillOntology(factory, this.ontology);
+//		r.flush();
+//		r.getRootOntology().individualsInSignature().filter(u -> u.isOWLNamedIndividual())
+//				.forEach(w -> {
+//					System.out.println("@@@" + w.getIRI());
+//					this.ontology.objectPropertyAssertionAxioms(w).forEach(t -> System.out.println(t.toString()));
+//
+//				});
+
+		
+		
+		
+		
+		
+
+		List<InferredAxiomGenerator<? extends OWLAxiom>> gens = new ArrayList<>();
+        gens.add(new InferredSubClassAxiomGenerator());  
+        gens.add(new InferredClassAssertionAxiomGenerator());
+        gens.add( new InferredDisjointClassesAxiomGenerator());
+        gens.add( new InferredEquivalentClassAxiomGenerator());
+        gens.add( new InferredEquivalentDataPropertiesAxiomGenerator());
+        gens.add( new InferredEquivalentObjectPropertyAxiomGenerator());
+        gens.add( new InferredInverseObjectPropertiesAxiomGenerator());
+        gens.add( new InferredObjectPropertyCharacteristicAxiomGenerator());
+        gens.add( new InferredPropertyAssertionGenerator());
+        gens.add( new InferredSubDataPropertyAxiomGenerator());
+        gens.add( new InferredSubObjectPropertyAxiomGenerator());
+
+        InferredOntologyGenerator iog = new InferredOntologyGenerator(r, gens);
+        OWLOntology infOnt = this.manager.createOntology();
+		iog.fillOntology(factory, infOnt);
+		this.manager.saveOntology(r.getRootOntology(), new FunctionalSyntaxDocumentFormat(),
+				new FileOutputStream(this.file));
 	}
 
 
-	public void preencherOnto(OntoPessoa pessoa) throws OWLOntologyStorageException, FileNotFoundException {
+	public void preencherOnto(OntoPessoa pessoa)
+			throws OWLOntologyStorageException, FileNotFoundException, OWLOntologyCreationException {
 		preencherDadosGerais(pessoa);
 		preencherProjetoPesquisa(pessoa);
 		preencherEvento(pessoa);
@@ -190,12 +250,7 @@ public class OntologyDAO {
 	}
 
 
-	public void diferentIndividual() {
-		OWLDataFactory factory = this.manager.getOWLDataFactory();
-		OWLDifferentIndividualsAxiom diffInd = factory
-				.getOWLDifferentIndividualsAxiom(this.ontology.getIndividualsInSignature());
-		this.ontology.add(diffInd);
-	}
+
 
 	public void limparDadosDesnecessario() {
 		for (TriplaOwl triplaOwl : TratamentoDeDados.listaObjetosDesnecessarios(this.ontology)) {
