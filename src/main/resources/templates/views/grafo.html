@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>cose demo</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    
+
+    <!-- For loading external data files -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch"></script>
+
+
+</head>
+
+<body style="background-color: #f2f2f2;">
+ <h1>cose demo</h1>
+    <div id="cy"></div>
+    <!-- Load application code at the end to ensure DOM is loaded -->
+ 
+ 
+ <script th:src="@{/grafo/code.js}"></script>
+ <script th:src="@{/grafo/cytoscape.js}"></script>
+ <script th:src="@{/grafo/style.css}"></script>
+ <script th:src="@{/grafo/data.json}"></script>
+ <script th:src="@{/grafo/cy-style.json}"></script>
+
+</body>
+</html>

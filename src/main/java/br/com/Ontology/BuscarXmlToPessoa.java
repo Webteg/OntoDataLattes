@@ -42,6 +42,7 @@ public class BuscarXmlToPessoa {
 		// pessoa.setListOntoProducao(listOntoProducao());
 		pessoa.setListOntoProjetoPesquisa(listOntoProjetoPesquisa());
 		pessoa.setListOntoBanca(listOntoBanca());
+		TratamentoDeDados.EventoeTrabalho(pessoa);
 		return pessoa;
 	}
 

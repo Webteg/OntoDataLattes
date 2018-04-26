@@ -104,11 +104,11 @@ public class OntoPessoa {
 	}
 
 	public ArrayList<OntoClass> getListOntoOrgEvento() {
-		return this.ListOntoOrgEvento;
+		return this.ListOntoEvento;
 	}
 
 	public void setListOntoOrgEvento(ArrayList<OntoClass> listOntoOrgEvento) {
-		this.ListOntoOrgEvento = listOntoOrgEvento;
+		this.ListOntoEvento.addAll(listOntoOrgEvento);
 	}
 
 	public ArrayList<TrabalhoEvento> getListOntoTrabalhoEvento() {

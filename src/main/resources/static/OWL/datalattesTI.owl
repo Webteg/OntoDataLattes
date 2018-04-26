@@ -58,10 +58,10 @@
         <Class IRI="#Organizacao"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BancaAperEspe"/>
+        <Class IRI="#Jornal"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Jornal"/>
+        <Class IRI="#BancaAperEspe"/>
     </Declaration>
     <Declaration>
         <Class IRI="#BancaGraduacao"/>
@@ -86,6 +86,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SonoplastiaMusica"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#organizouEvento"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Interpretacao"/>
@@ -337,6 +340,9 @@
         <Class IRI="#Aparelho"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#eventoTemOrganizacao"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ApresentacaoObraArtisticaTeatral"/>
     </Declaration>
     <Declaration>
@@ -445,10 +451,10 @@
         <Class IRI="#ObraArtesVisuais"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#relacaoBanca"/>
+        <Class IRI="#TextoMidias"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TextoMidias"/>
+        <ObjectProperty IRI="#relacaoBanca"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Capitulo"/>
@@ -1362,16 +1368,6 @@
         <Class IRI="#Musica"/>
     </SubClassOf>
     <DisjointClasses>
-        <Class IRI="#Ano"/>
-        <Class IRI="#AreaAtuacao"/>
-        <Class IRI="#Banca"/>
-        <Class IRI="#Evento"/>
-        <Class IRI="#FormacaçãoAcademica"/>
-        <Class IRI="#Pessoa"/>
-        <Class IRI="#Producao"/>
-        <Class IRI="#ProjetoPesquisa"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#ArtigoPublicado"/>
         <Class IRI="#TrabalhosEventos"/>
     </DisjointClasses>
@@ -1392,6 +1388,10 @@
         <ObjectProperty IRI="#participouDeBanca"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#eventoTemOrganizacao"/>
+        <ObjectProperty IRI="#organizouEvento"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#eventoTemParticipante"/>
         <ObjectProperty IRI="#participouEvento"/>
     </InverseObjectProperties>
@@ -1407,126 +1407,6 @@
         <ObjectProperty IRI="#participouDeTrabalho"/>
         <ObjectProperty IRI="#trabalhoTemPesquisador"/>
     </InverseObjectProperties>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="#relacaoAreaAtuacao"/>
-    </SymmetricObjectProperty>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="#relacaoBanca"/>
-    </SymmetricObjectProperty>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="#relacaoEvento"/>
-    </SymmetricObjectProperty>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="#relacaoGuia"/>
-    </SymmetricObjectProperty>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="#relacaoProjetoPesquisa"/>
-    </SymmetricObjectProperty>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="#relacaoTrabalho"/>
-    </SymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#ProjetoTeveParticipante"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#TrabalhoEmProjetoPesquisa"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#apresentouTrabalhoEvento"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#areaAtuacaoTemPesquisador"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#bancaTemParticipante"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#eFormado"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#eventoTemParticipante"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#eventoTeveTrabalho"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#eventoTeveTrabalhoDe"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#foiOrientadoPor"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#orientou"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#participouDeBanca"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#participouDeTrabalho"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#participouEvento"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#temAreaAtuacao"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#trabalhoEmEvento"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#trabalhoTemPesquisador"/>
-    </AsymmetricObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#ProjetoTeveParticipante"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#TrabalhoEmProjetoPesquisa"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#apresentouTrabalhoEvento"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#areaAtuacaoTemPesquisador"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#bancaTemParticipante"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#eFormado"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#eventoTemParticipante"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#eventoTeveTrabalho"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#eventoTeveTrabalhoDe"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#foiOrientadoPor"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#orientou"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#participouDeBanca"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#participouDeTrabalho"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#participouEvento"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#temAreaAtuacao"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#trabalhoEmEvento"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#trabalhoTemPesquisador"/>
-    </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#ProjetoTeveParticipante"/>
         <Class IRI="#ProjetoPesquisa"/>
@@ -1552,6 +1432,10 @@
         <Class IRI="#Pessoa"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eventoTemOrganizacao"/>
+        <Class IRI="#Evento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#eventoTemParticipante"/>
         <Class IRI="#Evento"/>
     </ObjectPropertyDomain>
@@ -1565,6 +1449,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#foiOrientadoPor"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#organizouEvento"/>
         <Class IRI="#Pessoa"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1648,6 +1536,10 @@
         <Class IRI="#FormacaçãoAcademica"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#eventoTemOrganizacao"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#eventoTemParticipante"/>
         <Class IRI="#Pessoa"/>
     </ObjectPropertyRange>
@@ -1662,6 +1554,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#foiOrientadoPor"/>
         <Class IRI="#Pessoa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#organizouEvento"/>
+        <Class IRI="#Evento"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#orientou"/>
@@ -1719,14 +1615,6 @@
         <ObjectProperty IRI="#trabalhoTemPesquisador"/>
         <Class IRI="#Pessoa"/>
     </ObjectPropertyRange>
-    <SubObjectPropertyOf>
-        <ObjectPropertyChain>
-            <ObjectProperty IRI="#apresentouTrabalhoEvento"/>
-            <ObjectProperty IRI="#trabalhoEmEvento"/>
-            <ObjectProperty IRI="#eventoTemParticipante"/>
-        </ObjectPropertyChain>
-        <ObjectProperty IRI="#relacaoTrabalhoEvento"/>
-    </SubObjectPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="#ISBN"/>
         <Class IRI="#Livro"/>
@@ -1857,20 +1745,170 @@
                 <Variable IRI="#x"/>
                 <Variable IRI="#w"/>
             </DifferentIndividualsAtom>
-            <DifferentIndividualsAtom>
-                <Variable IRI="#x"/>
-                <Variable IRI="#y"/>
-            </DifferentIndividualsAtom>
-            <DifferentIndividualsAtom>
-                <Variable IRI="#y"/>
-                <Variable IRI="#w"/>
-            </DifferentIndividualsAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#relacaoProjetoPesquisa"/>
                 <Variable IRI="#x"/>
                 <Variable IRI="#w"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Def-relacaoTrabalhoEventoOrg</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#apresentouTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#t1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#trabalhoEmEvento"/>
+                <Variable IRI="#t1"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#eventoTemOrganizacao"/>
+                <Variable IRI="#y"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#relacaoTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Def-relacaoTrabalhoEventoPar</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#apresentouTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#t1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#trabalhoEmEvento"/>
+                <Variable IRI="#t1"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#eventoTemParticipante"/>
+                <Variable IRI="#y"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#relacaoTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Def-relacaoEventoOrg</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#organizouEvento"/>
+                <Variable IRI="#y"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#organizouEvento"/>
+                <Variable IRI="#z"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#y"/>
+                <Variable IRI="#z"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#relacaoEvento"/>
+                <Variable IRI="#y"/>
+                <Variable IRI="#z"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Def-relacaoEventoOrgPart</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#organizouEvento"/>
+                <Variable IRI="#y"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#participouEvento"/>
+                <Variable IRI="#z"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#y"/>
+                <Variable IRI="#z"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#relacaoEvento"/>
+                <Variable IRI="#y"/>
+                <Variable IRI="#z"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>

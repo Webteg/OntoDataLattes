@@ -1425,6 +1425,9 @@
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#relacaoTrabalho"/>
     </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#relacaoTrabalhoEvento"/>
+    </SymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#ProjetoTeveParticipante"/>
     </AsymmetricObjectProperty>
@@ -1719,14 +1722,6 @@
         <ObjectProperty IRI="#trabalhoTemPesquisador"/>
         <Class IRI="#Pessoa"/>
     </ObjectPropertyRange>
-    <SubObjectPropertyOf>
-        <ObjectPropertyChain>
-            <ObjectProperty IRI="#apresentouTrabalhoEvento"/>
-            <ObjectProperty IRI="#trabalhoEmEvento"/>
-            <ObjectProperty IRI="#eventoTemParticipante"/>
-        </ObjectPropertyChain>
-        <ObjectProperty IRI="#relacaoTrabalhoEvento"/>
-    </SubObjectPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="#ISBN"/>
         <Class IRI="#Livro"/>
@@ -1819,6 +1814,64 @@
         <DataProperty IRI="#TituloTrabalhoFinal"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Def-relacaoTrabalhoEventoPar</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Pessoa"/>
+                <Variable IRI="#y"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Pessoa"/>
+                <Variable IRI="#x"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Producao"/>
+                <Variable IRI="#t1"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Evento"/>
+                <Variable IRI="#e1"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#apresentouTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#t1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#trabalhoEmEvento"/>
+                <Variable IRI="#t1"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#participouEvento"/>
+                <Variable IRI="#y"/>
+                <Variable IRI="#e1"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#relacaoTrabalhoEvento"/>
+                <Variable IRI="#x"/>
+                <Variable IRI="#y"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
     <DLSafeRule>
         <Annotation>
             <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>

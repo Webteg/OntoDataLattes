@@ -195,12 +195,10 @@ Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#areaAtuacaoTemPesquisador>))
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#bancaTemParticipante>))
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eFormado>))
-Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao>))
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante>))
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalho>))
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalhoDe>))
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#foiOrientadoPor>))
-Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento>))
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#orientou>))
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeBanca>))
 Declaration(ObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#participouDeTrabalho>))
@@ -226,24 +224,6 @@ Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#No
 Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#Titulo>))
 Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#TituloCurso>))
 Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#TituloTrabalhoFinal>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#3713266006821874>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#7733681743453751>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>))
 Declaration(AnnotationProperty(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled>))
 Declaration(Datatype(<http://www.datalattes.com/ontologies/datalattes.owl#xsd:gMonth>))
 Declaration(Datatype(xsd:date))
@@ -299,21 +279,13 @@ IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#e
 ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#eFormado> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#eFormado> <http://www.datalattes.com/ontologies/datalattes.owl#FormacaçãoAcademica>)
 
-# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> (<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao>)
-
-InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> <http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento>)
-AsymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao>)
-IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao>)
-ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
-ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> <http://www.datalattes.com/ontologies/datalattes.owl#Evento>)
-
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> (<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante>)
 
 InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#participouEvento>)
 AsymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante>)
 IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante>)
-ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
-ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#Evento>)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#Evento>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalho> (<http://www.datalattes.com/ontologies/datalattes.owl#eventoTeveTrabalho>)
 
@@ -337,13 +309,6 @@ AsymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#fo
 IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#foiOrientadoPor>)
 ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#foiOrientadoPor> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#foiOrientadoPor> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
-
-# Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento>)
-
-AsymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento>)
-IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento>)
-ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Evento>)
-ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#orientou> (<http://www.datalattes.com/ontologies/datalattes.owl#orientou>)
 
@@ -371,49 +336,55 @@ ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#partici
 
 AsymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento>)
 IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento>)
-ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Evento>)
-ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Evento>)
 
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao>)
 
-AsymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao>)
-IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao>)
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> <http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao>)
+SymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao>)
 ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca>)
 
-IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca>)
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca> <http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca>)
+SymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca>)
 ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoBanca> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento>)
 
-IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento>)
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento>)
+SymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento>)
 ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia>)
 
-IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia>)
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> <http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia>)
+SymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia>)
 ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa>)
 
-IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa>)
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> <http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa>)
+SymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa>)
 ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho>)
 
-IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho>)
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho>)
+SymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho>)
 ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 
 # Object Property: <http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> (<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento>)
 
-IrreflexiveObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento>)
+InverseObjectProperties(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento>)
+SymmetricObjectProperty(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento>)
 ObjectPropertyDomain(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 ObjectPropertyRange(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
 
@@ -510,6 +481,9 @@ SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Aerofotografia> 
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Analitica> <http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>)
 
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Ano> (<http://www.datalattes.com/ontologies/datalattes.owl#Ano>)
+
+
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#Aparelho> (<http://www.datalattes.com/ontologies/datalattes.owl#Aparelho>)
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Aparelho> <http://www.datalattes.com/ontologies/datalattes.owl#Prototipo>)
@@ -565,6 +539,9 @@ SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoRadi
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoTrabalho> (<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoTrabalho>)
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ApresentacaoTrabalho> <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoTecnica>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao> (<http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao>)
+
 
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#Arranjo> (<http://www.datalattes.com/ontologies/datalattes.owl#Arranjo>)
 
@@ -666,6 +643,9 @@ SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ArtigosAceitos> 
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#Assesoria> (<http://www.datalattes.com/ontologies/datalattes.owl#Assesoria>)
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Assesoria> <http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoTecnico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Banca> (<http://www.datalattes.com/ontologies/datalattes.owl#Banca>)
+
 
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#BancaAperEspe> (<http://www.datalattes.com/ontologies/datalattes.owl#BancaAperEspe>)
 
@@ -867,9 +847,15 @@ SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Equipamento> <ht
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Especializacao> <http://www.datalattes.com/ontologies/datalattes.owl#LatoSensu>)
 
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Evento> (<http://www.datalattes.com/ontologies/datalattes.owl#Evento>)
+
+
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#FarmacoSimilar> (<http://www.datalattes.com/ontologies/datalattes.owl#FarmacoSimilar>)
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#FarmacoSimilar> <http://www.datalattes.com/ontologies/datalattes.owl#Prototipo>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#FormacaçãoAcademica> (<http://www.datalattes.com/ontologies/datalattes.owl#FormacaçãoAcademica>)
+
 
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#Forum> (<http://www.datalattes.com/ontologies/datalattes.owl#Forum>)
 
@@ -1047,6 +1033,9 @@ SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Patente> <http:/
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Pedagogica> <http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>)
 
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> (<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa>)
+
+
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#Piloto> (<http://www.datalattes.com/ontologies/datalattes.owl#Piloto>)
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Piloto> <http://www.datalattes.com/ontologies/datalattes.owl#ProdutoTecnilogico>)
@@ -1075,6 +1064,9 @@ SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Processual> <http://www.datalattes.com/ontologies/datalattes.owl#ProcessoTecnica>)
 
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#Producao> (<http://www.datalattes.com/ontologies/datalattes.owl#Producao>)
+
+
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica> (<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica>)
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ProducaoArtistica> <http://www.datalattes.com/ontologies/datalattes.owl#Producao>)
@@ -1102,6 +1094,9 @@ SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#ProgramaRadioTV>
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#Projeto> (<http://www.datalattes.com/ontologies/datalattes.owl#Projeto>)
 
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Projeto> <http://www.datalattes.com/ontologies/datalattes.owl#ProdutoTecnilogico>)
+
+# Class: <http://www.datalattes.com/ontologies/datalattes.owl#ProjetoPesquisa> (<http://www.datalattes.com/ontologies/datalattes.owl#ProjetoPesquisa>)
+
 
 # Class: <http://www.datalattes.com/ontologies/datalattes.owl#Prototipo> (<http://www.datalattes.com/ontologies/datalattes.owl#Prototipo>)
 
@@ -1196,160 +1191,10 @@ SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#Traducao> <http:
 SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#TrilhaSonora> <http://www.datalattes.com/ontologies/datalattes.owl#Musica>)
 
 
-############################
-#   Named Individuals
-############################
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas> (<http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Evento> <http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> <http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402>)
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software> (<http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Evento> <http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> <http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217>)
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas> (<http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Evento> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402>)
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas> (<http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Evento> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402>)
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> (<http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> "20/03/2018_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> "0735298552666402")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> "eduardo_barrere")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> (<http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> "20/02/2018_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> "0846763436344325")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> "andré_luiz_de_oliveira")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> (<http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> "15/02/2017_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> "2487554612123446")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> "carlos_cristiano_hasenclever_borges")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293> (<http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293> "03/10/2017_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293> "2722036803654293")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293> "eduardo_pagani_julio")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#3713266006821874> (<http://www.datalattes.com/ontologies/datalattes.owl#3713266006821874>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#3713266006821874>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#3713266006821874> "16/02/2017_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#3713266006821874> "3713266006821874")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#3713266006821874> "gleiph_ghiotto_lima_de_menezes")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> (<http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> "16/03/2018_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> "3987091765361506")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> "edelberto_franco_silva")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217> (<http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217> <http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software>)
-ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217> <http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217> "25/01/2018_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217> "5008996792274217")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217> "fernanda_claudia_alves_campos")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> (<http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> "07/07/2017_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> "5293684092572886")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> "ciro_de_barros_barbosa")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092> (<http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092> "04/01/2018_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092> "7587726616949092")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092> "fabricio_martins_mendonça")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#7733681743453751> (<http://www.datalattes.com/ontologies/datalattes.owl#7733681743453751>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#7733681743453751>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#7733681743453751> "20/03/2018_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#7733681743453751> "7733681743453751")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#7733681743453751> "heder_soares_bernardino")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> (<http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> "21/05/2017_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> "7907503278098258")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> "alessandreia_marta_de_oliveira")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> (<http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> "07/03/2018_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> "9037224811267705")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> "alex_borges_vieira")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> (<http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> "14/03/2018_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> "9127577198387019")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> "bernardo_martins_rocha")
-
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820> (<http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>)
-
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>)
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#DataAtualizacao> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820> "09/08/2017_")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#IdLattes> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820> "9394611354094820")
-DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820> "edmar_welington_oliveira")
-
-
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293> <http://www.datalattes.com/ontologies/datalattes.owl#3713266006821874> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> <http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092> <http://www.datalattes.com/ontologies/datalattes.owl#7733681743453751> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293> <http://www.datalattes.com/ontologies/datalattes.owl#3713266006821874> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> <http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#ii_e-science_workshop_-_simpósio_brasileiro_de_engenharia_de_software> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> <http://www.datalattes.com/ontologies/datalattes.owl#5008996792274217> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> <http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> <http://www.datalattes.com/ontologies/datalattes.owl#7587726616949092> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#2722036803654293> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#i_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#ii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#iii_semana_de_atividades_científicas> <http://www.datalattes.com/ontologies/datalattes.owl#0735298552666402> <http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#3987091765361506> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019> <http://www.datalattes.com/ontologies/datalattes.owl#9394611354094820>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#5293684092572886> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#2487554612123446> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#0846763436344325> <http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705> <http://www.datalattes.com/ontologies/datalattes.owl#9127577198387019>)
-DifferentIndividuals(<http://www.datalattes.com/ontologies/datalattes.owl#7907503278098258> <http://www.datalattes.com/ontologies/datalattes.owl#9037224811267705>)
-DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoProjetoPesquisa") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t2>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t2>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>))))
-DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoTrabalhoEventoOrg") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#apresentouTrabalhoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#trabalhoEmEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemOrganizacao> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>))))
-DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoTrabalhoEventoPar") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#apresentouTrabalhoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#trabalhoEmEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#eventoTemParticipante> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>))))
+DisjointClasses(<http://www.datalattes.com/ontologies/datalattes.owl#Ano> <http://www.datalattes.com/ontologies/datalattes.owl#AreaAtuacao> <http://www.datalattes.com/ontologies/datalattes.owl#Banca> <http://www.datalattes.com/ontologies/datalattes.owl#Evento> <http://www.datalattes.com/ontologies/datalattes.owl#FormacaçãoAcademica> <http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#Producao> <http://www.datalattes.com/ontologies/datalattes.owl#ProjetoPesquisa>)
+DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoTrabalhoEventoPar") Body(ClassAtom(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)) ClassAtom(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>)) ClassAtom(<http://www.datalattes.com/ontologies/datalattes.owl#Producao> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ClassAtom(<http://www.datalattes.com/ontologies/datalattes.owl#Evento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#apresentouTrabalhoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#trabalhoEmEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoTrabalhoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>))))
+DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoProjetoPesquisa") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t2>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#TrabalhoEmProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#t2>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoProjetoPesquisa> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#w>))))
 DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoOrientou") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#orientou> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#orientou> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#x>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoGuia> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>))))
 DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoAreaAtuacao") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#temAreaAtuacao> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoAreaAtuacao> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>))))
-DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoEventoOrg") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>))))
-DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoEventoOrgPart") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#organizouEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>))))
 DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "Def-relacaoEvento") Body(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#participouEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#e1>)) DifferentIndividualsAtom(Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>)))Head(ObjectPropertyAtom(<http://www.datalattes.com/ontologies/datalattes.owl#relacaoEvento> Variable(<http://www.datalattes.com/ontologies/datalattes.owl#y>) Variable(<http://www.datalattes.com/ontologies/datalattes.owl#z>))))
 )

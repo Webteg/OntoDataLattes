@@ -28,25 +28,16 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
-import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerConfiguration;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.reasoner.ReasonerProgressMonitor;
 import org.semanticweb.owlapi.reasoner.SimpleConfiguration;
 import org.semanticweb.owlapi.util.InferredAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredClassAssertionAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredDisjointClassesAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredEquivalentClassAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredEquivalentDataPropertiesAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredEquivalentObjectPropertyAxiomGenerator;
 import org.semanticweb.owlapi.util.InferredInverseObjectPropertiesAxiomGenerator;
 import org.semanticweb.owlapi.util.InferredObjectPropertyCharacteristicAxiomGenerator;
 import org.semanticweb.owlapi.util.InferredOntologyGenerator;
 import org.semanticweb.owlapi.util.InferredPropertyAssertionGenerator;
-import org.semanticweb.owlapi.util.InferredSubClassAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredSubDataPropertyAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredSubObjectPropertyAxiomGenerator;
 import org.semanticweb.owlapi.util.OWLEntityRemover;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -90,7 +81,7 @@ public class OntologyDAO {
 		this.manager.saveOntology(this.ontology, new FunctionalSyntaxDocumentFormat(), new FileOutputStream(this.file));
 		diferentIndividual();
 		this.manager.saveOntology(this.ontology, new FunctionalSyntaxDocumentFormat(), new FileOutputStream(this.file));
-
+		Inferir();
 	}
 
 	public void saveOntologyDAO(OWLDocumentFormat formato)
@@ -112,44 +103,42 @@ public class OntologyDAO {
 	}
 
 	public void Inferir() throws OWLOntologyStorageException, FileNotFoundException, OWLOntologyCreationException {
+		this.manager = OWLManager.createOWLOntologyManager();
+		this.ontology = this.manager.loadOntologyFromOntologyDocument(this.file);
 		OWLDataFactory factory = this.manager.getOWLDataFactory();
 		Logger LOG = LoggerFactory.getLogger(ReasonTeste.class);
 		ReasonerProgressMonitor progressMonitor = new LoggingReasonerProgressMonitor(LOG, "Loginference");
 		OWLReasonerConfiguration config = new SimpleConfiguration(progressMonitor);
 		OWLReasonerFactory rf = new ReasonerFactory();
-		OWLReasoner r = rf.createReasoner(this.ontology, config);
-		r.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-//		r.flush();
-//		r.getRootOntology().individualsInSignature().filter(u -> u.isOWLNamedIndividual())
-//				.forEach(w -> {
-//					System.out.println("@@@" + w.getIRI());
-//					this.ontology.objectPropertyAssertionAxioms(w).forEach(t -> System.out.println(t.toString()));
-//
-//				});
+		// OWLReasoner r = rf.createReasoner(this.ontology, config);
+		OWLReasoner r = rf.createNonBufferingReasoner(this.ontology, config);
+		// r.precomputeInferences(InferenceType.DATA_PROPERTY_ASSERTIONS);
 
-		
-		
-		
-		
-		
+		// OWLObjectProperty obj = factory.getOWLObjectProperty(this.DATALATTESIRI +
+		// "#", "relacaoEvento");
+		// this.ontology.individualsInSignature().filter(u ->
+		// u.isOWLNamedIndividual()).forEach(w -> {
+		// System.out.println("@@@" + w.getIRI());
+		// r.objectPropertyValues(w, obj).forEach(y -> {
+		// System.out.println(y.getIRI());
+		// });
+		// });
 
 		List<InferredAxiomGenerator<? extends OWLAxiom>> gens = new ArrayList<>();
-        gens.add(new InferredSubClassAxiomGenerator());  
-        gens.add(new InferredClassAssertionAxiomGenerator());
-        gens.add( new InferredDisjointClassesAxiomGenerator());
-        gens.add( new InferredEquivalentClassAxiomGenerator());
-        gens.add( new InferredEquivalentDataPropertiesAxiomGenerator());
-        gens.add( new InferredEquivalentObjectPropertyAxiomGenerator());
-        gens.add( new InferredInverseObjectPropertiesAxiomGenerator());
-        gens.add( new InferredObjectPropertyCharacteristicAxiomGenerator());
-        gens.add( new InferredPropertyAssertionGenerator());
-        gens.add( new InferredSubDataPropertyAxiomGenerator());
-        gens.add( new InferredSubObjectPropertyAxiomGenerator());
+		// gens.add(new InferredClassAssertionAxiomGenerator());
+		gens.add(new InferredInverseObjectPropertiesAxiomGenerator());
+		gens.add(new InferredObjectPropertyCharacteristicAxiomGenerator());
+		gens.add(new InferredPropertyAssertionGenerator());
+		File ont = new File(System.getProperty("user.dir") + "/testeResultado.owl");
+		InferredOntologyGenerator iog = new InferredOntologyGenerator(r, gens);
+		
+		// axiomGenerators.stream().flatMap(g -> generate(df, g))
+		
+		
+		iog.fillOntology(factory, this.ontology);
 
-        InferredOntologyGenerator iog = new InferredOntologyGenerator(r, gens);
-        OWLOntology infOnt = this.manager.createOntology();
-		iog.fillOntology(factory, infOnt);
-		this.manager.saveOntology(r.getRootOntology(), new FunctionalSyntaxDocumentFormat(),
+		System.out.println("ola");
+		this.manager.saveOntology(this.ontology, new FunctionalSyntaxDocumentFormat(),
 				new FileOutputStream(this.file));
 	}
 
@@ -159,11 +148,10 @@ public class OntologyDAO {
 		preencherDadosGerais(pessoa);
 		preencherProjetoPesquisa(pessoa);
 		preencherEvento(pessoa);
-		preencherOrgEvento(pessoa);
 		preencherFormacao(pessoa);
 		preencherBanca(pessoa);
 		preencherTrabalhoEvento(pessoa);
-		saveOntologyDAO();
+		// saveOntologyDAO();
 	}
 
 	public void preencherDadosGerais(OntoPessoa pessoa) {
@@ -197,18 +185,18 @@ public class OntologyDAO {
 		});
 	}
 
-	public void preencherOrgEvento(OntoPessoa pessoa) {
-		pessoa.getListOntoOrgEvento().forEach(u -> {
-			addIndividual(u.getTitulo(), u.getTipo());
-			addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "organizouEvento");
-			addRelacaoInd(u.getTitulo(), pessoa.getIdLattes(), "eventoTemOrganizacao");
-		});
-	}
+	// public void preencherOrgEvento(OntoPessoa pessoa) {
+	// pessoa.getListOntoOrgEvento().forEach(u -> {
+	// addIndividual(u.getTitulo(), u.getTipo());
+	// addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "participouEvento");
+	// addRelacaoInd(u.getTitulo(), pessoa.getIdLattes(), "eventoTemParticipante");
+	// });
+	// }
 
 	public void preencherFormacao(OntoPessoa pessoa) {
 		pessoa.getListOntoFormacao().forEach(u -> {
-			addIndividual(u.getTitulo(), u.getTipo());
-			addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "eFormado");
+			// addIndividual(u.getTitulo(), u.getTipo());
+			// addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "eFormado");
 			u.getListAutores().forEach(t -> {
 				String nome = (t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId();
 				addIndividual(nome, "Pessoa");
@@ -220,15 +208,15 @@ public class OntologyDAO {
 
 	public void preencherBanca(OntoPessoa pessoa) {
 		pessoa.getListOntoBanca().forEach(u -> {
-			addIndividual(u.getTitulo(), u.getTipo());
-			addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "participouDeBanca");
-			addRelacaoInd(u.getTitulo(), pessoa.getIdLattes(), "bancaTemParticipante");
+			// addIndividual(u.getTitulo(), u.getTipo());
+			// addRelacaoInd(pessoa.getIdLattes(), u.getTitulo(), "participouDeBanca");
+			// addRelacaoInd(u.getTitulo(), pessoa.getIdLattes(), "bancaTemParticipante");
 			u.getListAutores().forEach(t -> {
 				String nome = (t.getId() == "" || t.getId().isEmpty() || t.getId() == null) ? t.getNome() : t.getId();
 				addIndividual(nome, "Pessoa");
-				addRelacaoInd(nome, u.getTitulo(), "participouDeBanca");
+				// addRelacaoInd(nome, u.getTitulo(), "participouDeBanca");
 
-				addRelacaoInd(u.getTitulo(), nome, "bancaTemParticipante");
+				// addRelacaoInd(u.getTitulo(), nome, "bancaTemParticipante");
 				if (!pessoa.getIdLattes().contentEquals(nome)) {
 					addRelacaoInd(pessoa.getIdLattes(), nome, "relacaoBanca");
 					addRelacaoInd(nome, pessoa.getIdLattes(), "relacaoBanca");
@@ -253,9 +241,36 @@ public class OntologyDAO {
 
 
 	public void limparDadosDesnecessario() {
-		for (TriplaOwl triplaOwl : TratamentoDeDados.listaObjetosDesnecessarios(this.ontology)) {
+		// System.out.println(this.ontology.individualsInSignature().filter(u ->
+		// u.isOWLNamedIndividual())
+		// .filter(u ->
+		// this.ontology.classAssertionAxioms(u).findFirst().get().signature().findFirst().get()
+		// .getIRI().getFragment().contains("Pessoa"))
+		// .count());
+		for (TriplaOwl triplaOwl : TratamentoDeDados.listaPessoaDesnecessario(this.ontology)) {
 			removeIndividual(triplaOwl.getSujeito());
 		}
+		// System.out.println(this.ontology.individualsInSignature().filter(u ->
+		// u.isOWLNamedIndividual())
+		// .filter(u ->
+		// this.ontology.classAssertionAxioms(u).findFirst().get().signature().findFirst().get()
+		// .getIRI().getFragment().contains("Pessoa"))
+		// .count());
+		// System.out.println(this.ontology.individualsInSignature().filter(u ->
+		// u.isOWLNamedIndividual())
+		// .filter(u ->
+		// this.ontology.classAssertionAxioms(u).findFirst().get().signature().findFirst().get()
+		// .getIRI().getFragment().contains("Evento"))
+		// .count());
+		for (TriplaOwl triplaOwl : TratamentoDeDados.listaEventoDesnecessario(this.ontology)) {
+			removeIndividual(triplaOwl.getSujeito());
+		}
+		// System.out.println(this.ontology.individualsInSignature().filter(u ->
+		// u.isOWLNamedIndividual())
+		// .filter(u ->
+		// this.ontology.classAssertionAxioms(u).findFirst().get().signature().findFirst().get()
+		// .getIRI().getFragment().contains("Evento"))
+		// .count());
 	}
 
 	public void removeIndividual(IRI objeto) {
